@@ -7,9 +7,9 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import no.hvl.dat100ptc.GPSData;
-import no.hvl.dat100ptc.GPSDataConverter;
-import no.hvl.dat100ptc.GPSDataReaderWriter;
+import no.hvl.dat100ptc.oppgave2.GPSData;
+import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
+import no.hvl.dat100ptc.oppgave2.GPSDataReaderWriter;
 
 public class GPSDataConverterTester {
 

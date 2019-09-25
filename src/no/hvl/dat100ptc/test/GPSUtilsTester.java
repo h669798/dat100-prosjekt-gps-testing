@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import no.hvl.dat100ptc.GPSUtils;
+import no.hvl.dat100ptc.oppgave3.GPSUtils;
 
 public class GPSUtilsTester {
 

@@ -6,10 +6,11 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
-import no.hvl.dat100ptc.GPSData;
-import no.hvl.dat100ptc.GPSComputer;
-import no.hvl.dat100ptc.GPSDataConverter;
-import no.hvl.dat100ptc.GPSDataReaderWriter;
+
+import no.hvl.dat100ptc.oppgave2.GPSData;
+import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
+import no.hvl.dat100ptc.oppgave2.GPSDataReaderWriter;
+import no.hvl.dat100ptc.oppgave4.GPSComputer;
 
 public class GPSComputerTester {
 

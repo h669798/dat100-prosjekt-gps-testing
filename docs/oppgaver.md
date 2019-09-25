@@ -38,7 +38,7 @@ elevations = { "61.9", "56.2", "56.1","57.0", "105.5" }
 
 ```
 
-Dvs. informasjonen fra første GPS datapunkt står på indeks (posision) 0 i tabellen ovenfor, informasjon fra andre GPS datapunkt finnes på indeks 1 osv.
+Dvs. informasjonen fra første GPS datapunkt står på indeks (posisjon) 0 i tabellen ovenfor, informasjon fra andre GPS datapunkt finnes på indeks 1 osv.
 
 #### 1a)
 
