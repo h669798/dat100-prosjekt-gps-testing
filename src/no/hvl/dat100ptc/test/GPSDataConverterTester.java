@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
+import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
 import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
@@ -19,126 +20,27 @@ public class GPSDataConverterTester {
 	
 	*/
 	
-	private String[] times = {"2017-08-13T08:52:26.000Z", "2017-08-13T08:53:00.000Z"};
-	private int[] timesexp = {26 + 60 * 52 + 60 * 60 * 8, 00 + 53 * 60 + 8 * 60 * 60};
-	
-	private String[] latitudes = {"60.385390","60.385588"};
-	private double[] latitudesexp = {60.385390,60.385588};
-			
-	private String[] longitudes = {"5.217217","5.217857"};
-	private double[] longitudesexp = {5.217217,5.217857};
-			
-	private String[] elevations = {"61.9","56.2"};
-	private double[] elevationsexp = {61.9,56.2};
+	private String TIMESTR = "2017-08-13T08:52:26.000";
+	private String LATSTR = "60.385390";
+	private String LONGSTR = "5.217217";
+	private String ELEVSTR = "61.9";
 		
-	private double ACCURACY = 0.0000001;
-	
-	private GPSData gpsdata = new GPSData(times,latitudes,longitudes,elevations);
-	
-	GPSDataConverter converter;
-	
-	@Before
-	public void SetUp() {
-		converter = new GPSDataConverter(gpsdata);
-		converter.convert();
-	}
-	
 	@Test
 	public void test_toSeconds() {
 		
-		String timestr = "2017-08-13T08:52:26.000";
-		
-	    assertEquals("testtoSeconds", 
-	    		8*60*60 + 52*60 + 26,GPSDataConverter.toSeconds(timestr));
+	    assertEquals(8*60*60 + 52*60 + 26,GPSDataConverter.toSeconds(TIMESTR));
 		
 	}
 
-	// TODO: LMK: shared test functions for the four tables below would be possible
 	@Test
-	public void test_convertTime() {
-
-		assertNotNull("konvertert tabell var null", converter.times);
-		assertEquals("tabell lengde", 2, converter.times.length);
-		assertArrayEquals("tabell innhold", timesexp, converter.times);
-	}
-	
-	@Test
-	public void test_convertLatitude() {
-
-		assertNotNull("tabell var null", converter.latitudes);
-		assertEquals("tabell lengde", 2, converter.latitudes.length);
-		assertArrayEquals(latitudesexp, converter.latitudes,ACCURACY);
-	}
-	
-	@Test
-	public void test_convertLongitude() {
-
-		assertNotNull("Konvertert tabell var null", converter.longitudes);
-		assertEquals("konvertering tabell lengde", 2, converter.longitudes.length);
-		assertArrayEquals(longitudesexp, converter.longitudes,ACCURACY);
-	}
-	
-	@Test
-	public void test_convertElevation() {
-
-		assertNotNull("Konvertert tabell var null", converter.elevations);
-		assertEquals("Høydekonvertering tabell lengde", 2, converter.elevations.length);
-		assertArrayEquals(elevationsexp, converter.elevations,ACCURACY);
-	}
-	
-	@Test
-	public void test_Printshortlog () {
-			
-			String testfile = "short";
-			System.out.println(testfile);
-			
-			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-			
-			converter = new GPSDataConverter(gpsdata);
-			converter.convert();
-			converter.print();
-			
-		}
+	public void test_convert () {
 		
-	@Test
-	public void test_Printmediumlog () {
-			
-			String testfile = "medium";
-			System.out.println(testfile);
-			
-			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-			
-			converter = new GPSDataConverter(gpsdata);
-			converter.convert();
-			converter.print();
-			
-		}
-	
-	@Test
-	public void test_Printlonglog () {
-			
-			String testfile = "long";
-			System.out.println(testfile);
-			
-			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-			
-			converter = new GPSDataConverter(gpsdata);
-			converter.convert();
-			converter.print();
-			
-		}
-	
-	@Test
-	public void test_Prinvmlog () {
-			
-			String testfile = "vm";
-			System.out.println(testfile);
-			
-			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-			
-			converter = new GPSDataConverter(gpsdata);
-			converter.convert();
-			converter.print();
-			
-		}
+		GPSPoint g = GPSDataConverter.convert(TIMESTR,LATSTR,LONGSTR,ELEVSTR);
+		
+		assertEquals(8*60*60 + 52*60 + 26,g.getTime());
+		assertEquals(60.385390,g.getLatitude(),0.01);
+		assertEquals(5.217217,g.getLongitude(),0.01);
+		assertEquals(61.9,g.getElevation(),0.01);
+		
+	}
 }
