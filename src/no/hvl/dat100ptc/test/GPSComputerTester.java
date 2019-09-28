@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
-import no.hvl.dat100ptc.oppgave2.GPSDataReaderWriter;
+import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
 import no.hvl.dat100ptc.oppgave4.GPSComputer;
 
 public class GPSComputerTester {
@@ -82,7 +82,7 @@ public class GPSComputerTester {
 		String testfile = "short";
 		System.out.println("GPS datafile: " + testfile);
 		
-		GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 		
 		gpscomp = new GPSComputer(gpsdata);
 		
@@ -94,7 +94,7 @@ public class GPSComputerTester {
 		String testfile = "medium";
 		System.out.println("GPS datafile: " + testfile);
 		
-		GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 		
 		gpscomp = new GPSComputer(gpsdata);
 		
@@ -107,7 +107,7 @@ public class GPSComputerTester {
 		String testfile = "long";
 		System.out.println("GPS datafile: " + testfile);
 		
-		GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 		
 		gpscomp = new GPSComputer(gpsdata);
 		
@@ -119,7 +119,7 @@ public class GPSComputerTester {
 		String testfile = "vm";
 		System.out.println("GPS datafile: " + testfile);
 		
-		GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 		
 		gpscomp = new GPSComputer(gpsdata);
 		

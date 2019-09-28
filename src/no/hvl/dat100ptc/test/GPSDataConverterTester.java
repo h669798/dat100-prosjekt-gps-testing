@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import no.hvl.dat100ptc.oppgave2.GPSData;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
-import no.hvl.dat100ptc.oppgave2.GPSDataReaderWriter;
+import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
 
 public class GPSDataConverterTester {
 
@@ -92,7 +92,7 @@ public class GPSDataConverterTester {
 			String testfile = "short";
 			System.out.println(testfile);
 			
-			GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 			
 			converter = new GPSDataConverter(gpsdata);
 			converter.convert();
@@ -106,7 +106,7 @@ public class GPSDataConverterTester {
 			String testfile = "medium";
 			System.out.println(testfile);
 			
-			GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 			
 			converter = new GPSDataConverter(gpsdata);
 			converter.convert();
@@ -120,7 +120,7 @@ public class GPSDataConverterTester {
 			String testfile = "long";
 			System.out.println(testfile);
 			
-			GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 			
 			converter = new GPSDataConverter(gpsdata);
 			converter.convert();
@@ -134,7 +134,7 @@ public class GPSDataConverterTester {
 			String testfile = "vm";
 			System.out.println(testfile);
 			
-			GPSData gpsdata = GPSDataReaderWriter.readGPSFile(testfile);
+			GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
 			
 			converter = new GPSDataConverter(gpsdata);
 			converter.convert();

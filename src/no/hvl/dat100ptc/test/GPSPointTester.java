@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import no.hvl.dat100ptc.oppgave1.*;
 
-class TestGPSPoint {
+class GPSPointTester {
 
 	private GPSPoint g;
 	
