@@ -3,25 +3,16 @@ package no.hvl.dat100ptc.test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import no.hvl.dat100ptc.oppgave2.GPSData;
+import no.hvl.dat100ptc.oppgave1.GPSPoint;
 import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
-import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
 import no.hvl.dat100ptc.oppgave4.GPSComputer;
 
 public class GPSComputerTester {
-
-	private String[] times = 
-		{"2017-08-13T08:00:00.000Z", "2017-08-13T08:00:10.000Z", "2017-08-13T08:00:40.000Z", 
-		 "2017-08-13T08:01:10.000Z", "2017-08-13T08:01:20.000Z"};
-	
-	private String[] latitudes =  {"60.376988", "60.385390", "60.379527",  "60.385390", "60.376988"};
-	private String[] longitudes = { "5.227082",  "5.217217",  "5.3227322", "5.217217", "5.227082"};
-
-	private String[] elevations = { "10", "20", "10", "40", "50"};
 	
 	private int EXP_TOTALTIME = 1 * 60 + 20;
 	private double EXP_TOTALDISTANCE = 1080 + 5835 + 5835 + 1080;
@@ -31,12 +22,26 @@ public class GPSComputerTester {
 	private double EXP_MAXSPEED = (194.5 * 60 * 60 / 1000) ;
 	private double EXP_AVERAGESPEED = ((EXP_TOTALDISTANCE / EXP_TOTALTIME) * 60 * 60) / 1000;
 			
-	private GPSData gpsdata = new GPSData(times,latitudes,longitudes,elevations);
-	GPSComputer gpscomp;
+	private GPSComputer gpscomp;
 	
 	@Before
 	public void SetUp() {
-		gpscomp = new GPSComputer(gpsdata);
+
+		GPSPoint g0 = GPSDataConverter.convert("2017-08-13T08:00:00.000Z","60.376988","5.227082","10");
+		GPSPoint g1 = GPSDataConverter.convert("2017-08-13T08:00:10.000Z","60.385390","5.217217","20");
+		GPSPoint g2 = GPSDataConverter.convert("2017-08-13T08:00:40.000Z","60.379527","5.3227322","10");
+		GPSPoint g3 = GPSDataConverter.convert("2017-08-13T08:01:10.000Z","60.385390","5.217217","40");
+		GPSPoint g4 = GPSDataConverter.convert("2017-08-13T08:01:20.000Z","60.376988","5.227082","50");
+		
+		GPSPoint[] gpspoints = new GPSPoint[5];
+		
+		gpspoints[0] = g0;
+		gpspoints[1] = g1;
+		gpspoints[2] = g2;
+		gpspoints[3] = g3;
+		gpspoints[4] = g4;
+		
+		gpscomp = new GPSComputer(gpspoints);
 	}
 	
 	@Test
@@ -68,7 +73,6 @@ public class GPSComputerTester {
 		assertEquals("averageSpeed",EXP_AVERAGESPEED,gpscomp.averageSpeed(),0.1);
 	}
 	
-	// TODO test for kcal and totalkcal
 	@Test
 	public void testkcal() {
 		assertEquals("kcal",8.0/3600.0,gpscomp.kcal(1.0, 1, 13.0/GPSComputer.MS),0.1);
@@ -76,53 +80,48 @@ public class GPSComputerTester {
 		assertEquals("kcal",3*2*8.0/3600.0,gpscomp.kcal(3.0, 2, 13.0/GPSComputer.MS),0.1);
 	}
 	
-	// TODO: factor out common parts in the tests below
 	@Test
-	public void test_Printshort() {
-		String testfile = "short";
-		System.out.println("GPS datafile: " + testfile);
-		
-		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-		
-		gpscomp = new GPSComputer(gpsdata);
-		
-		gpscomp.print();
-	}
-	
-	@Test
-	public void test_Printmedium() {
-		String testfile = "medium";
-		System.out.println("GPS datafile: " + testfile);
-		
-		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-		
-		gpscomp = new GPSComputer(gpsdata);
-		
-		gpscomp.print();
+	public void testtotalkcal () {
+		assertEquals(24.89,gpscomp.totalKcal(80.0),0.01);
 		
 	}
 	
 	@Test
-	public void test_Printlong() {
-		String testfile = "long";
-		System.out.println("GPS datafile: " + testfile);
+	public void test_display() {
+		gpscomp.displayStatistics();
+	}
+	public void test_displayStatictics(String filename) {
 		
-		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
+		GPSComputer gpscomp = new GPSComputer(filename);
 		
-		gpscomp = new GPSComputer(gpsdata);
+		gpscomp.displayStatistics();
 		
-		gpscomp.print();
 	}
 	
 	@Test
-	public void test_Printlvm() {
-		String testfile = "vm";
-		System.out.println("GPS datafile: " + testfile);
+	public void test_displayshort() {
 		
-		GPSData gpsdata = GPSDataFileReader.readGPSFile(testfile);
-		
-		gpscomp = new GPSComputer(gpsdata);
-		
-		gpscomp.print();
+		test_displayStatictics("short");
 	}
+	
+	@Test
+	public void test_displaysmedium() {
+		
+		test_displayStatictics("medium");
+	}
+	
+	@Test
+	public void test_displaylong() {
+		
+		test_displayStatictics("long");
+	}
+	
+	@Test
+	public void test_Printvm() {
+		
+		test_displayStatictics("vm");
+	}
+	
+	
+	
 }
