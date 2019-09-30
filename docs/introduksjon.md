@@ -1,6 +1,8 @@
-## Mål med prosjektet og startkode
+## GPS Data og formål med prosjektet
 
 Mange sykkelcomputere, sportsklokker og fitness-applikasjoner bruker GPS data dvs. informasjon om bla. tid og posisjon for å beregne statistikk som distanse, hastighet, høydemeter og til å visualisere rute og høydeprofil. Dette gjøres i programkode på enheten.
+
+### Formål
 
 Formålet med dette prosjektet er å implementere Java-programmer som har tilsvarende funksjonalitet som en typisk sykkelcomputer. Avanserte sykkelcomputere gjør beregninger løpende basert på input data fra en GPS sensor. Java-programmene i dette prosjektet baseres på å lese GPS data fra en datafil. På den måten vil Java-programmet simulere en riktig sykkelcomputer og fungere som en slags virtuell (ikke fysisk) sykkelcomputer.
 
@@ -28,45 +30,6 @@ Som eksempel har vi for det første GPS datapunkt (i linje tre i filen) informas
 
 Datafilen forteller altså hvilke punkter vi har flyttet oss igjennom og til hvilket tidspunkt. Vi startet i punktet svarende til linje 3, så flyttet vi oss til punktet i linje 4 osv. Totalt sett har vi beveget oss gjennom fem punkter som da definerer den ruten vi har syklet.
 
-I oppgaven skal dere bruke større GPS datafiler bla. en datafil hvor en DAT100 faglærer har vært ute og syklet på ulike deler av løypene fra VM i Bergen, 2017.
+I oppgaven skal dere bruke større GPS datafiler bla. en datafil hvor en DAT100 underviser har vært ute og syklet på ulike deler av løypene fra VM i Bergen, 2017.
 
 Ruten er vist her: http://doarama.com/view/1604599 der GPS datafilen er visualisert basert på en web-basert applikasjon.
-
-### Eclipse-prosjekt for en sykkelcomputer
-
-Dere skal ta utgangpunkt i et Eclipse-prosjekt som inneholder en rekke Java-klasser som utgjør rammen rundt en sykkelcomputer-applikasjonen. Dere trenger ikke å legge til nye klasser, men dere skal implementere ulike metoder i klassene som er gitt.
-
-Gruppen kan få tilgang til start Java-koden via Github classroom ved å gå til følgende adresse:
-
-https://classroom.github.com/a/rH9NpPrl
-
-og akseptere oppgaven.
-
-**Neste steg** er da å importere koden inn i Eclipse som beskrevet i  [Oppgave 3 på Java programmering 0](https://github.com/dat100hib/H2017/blob/master/programmering/jplab0/JP0.md#oppgave-3-github-classroom-og-junit-enhetstesting)
-
-Hvis gruppen ønsker å bruke en felles github-oppbevaringsplass for koden, er det tilstrekkelig at en i gruppen aksepterer oppgaven via lenken ovenfor og deretter gir de andre medlemmene i gruppen tilgang til oppbevaringsplassen (repository). Dette kan gjøres ved å logge inn på www.github.com, gå til oppbevaringsplassen og via *Settings* for oppbevaringsplassen legge til de andre medlemmer i gruppen som *Collaborators*.
-
-De andre gruppemedlemmene må da klone oppbevaringsplassen ned på egen PC ved å velge *File → Import → Git → Projects from Git → Clone URI* i Eclipse og lime inn URL’en til den felles oppbevaringsplassen. Endringer i filer i prosjektet lastes opp til den felles oppbevaringsplassen ved å bruke  *Team | Add to Index* etterfulgt av *Team | Commit … | Commit and Push* og hentes ned ved å bruke *Team | Pull*.
-
-### Java startkoden
-
-Eclipse-prosjektet som dere skal ta utgangspunkt i er organisert i to pakker:
-
-- `no.hvl.dat100.prosjekt` med de klasser som inneholder metoder som gruppen skal implementere i oppgavene som presenteres nedenfor.
-
-- `no.hvl.dat100.prosjekt.test` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstes-ter.
-
-Formålet med enhetstestene er å gjøre det enklere å teste metoder etterhvert som de implementeres uten å skulle starte selve sykkelcomputer-applikasjonen.  
-
-Konvensjonen er at enhetstester for en klasse `X.java` er implementert i filen med navn `XTester`.java. Eksempelvis inneholder klassen `GPSUtilsTester.java` enhetstester for klassen `GPSUtils.java` hvor dere skal implementere metoder.  
-
-### Utføre JUnit enhetstest
-En test-klasse med enhetstest utføres ved å velge test-klassen etterfulgt av *Run As → JUnit Test*. Man kan kjøre alle testene i en test-pakke ved å velge pakken etterfulgt av *Run As → JUnit Test*. Alle testene i Eclipse-prosjektet kjøres ved å velge prosjektet etterfulgt av *Run As → JUnit Test*.
-
-Det er god/anbefalt praksis å gjenta testene når det gjøres endringer/forbedringer i implementasjonen av en metode. Det anbefales også å teste etterhvert som de enkelte metoder implementeres. Enhetstestene er ikke komplette, men tester basale ting for metodene i de klasser som dere skal implementere.
-
-Enhetstesting og test-drevet utvikling er et tema senere i studiet og det er et generelt godt ingeniørprinsipp å teste komponentene sine før de settes sammen til et større system.
-
-De steder i koden hvor dere skal implementere Java-kode, er merket med en kommenter og teksten `TODO`. Disse plassene i koden kan lett identifiseres ved at de gir en blå markering i høyresiden av editor-vinduet i Eclipse. For å kjøre det enklere ifm. presentasjon av oppgaven å finne de plassene hvor dere har lagt til kode, anbefales det å la kommentarene med `OPPGAVE – START` og `SLUTT` bli stående i koden.  
-
-I mappen `logs` i Eclipse-prosjektet finnes tre CSV filer filer: `short.log`, `medium.log`, `long.log` og `vm.log` med GPS data punkter som kan brukes som input til Java sykkelcomputeren.

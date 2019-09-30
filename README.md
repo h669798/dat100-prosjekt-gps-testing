@@ -16,6 +16,8 @@ Deler av prosjektet vil oppleves som krevende for en del. Det gjelder i all hove
 
 PÅ Canvas er der opprettet et [diskusjonsforum](https://hvl.instructure.com/courses/10051/discussion_topics/57920) for spørsmål og svar omkring prosjektet. Det er **IKKE** lov å legge ut ferdige løsninger på dette forum'et.
 
+Det anbefales også å se på forelesningsnotatene fra forelesningen der programmeringsprosjektet blev introdusert.
+
 ### Forelesninger og programmerings-lab uke 41
 
 Der er **ikke** ordinære forelesninger i uke 41, men der vil være programmerings-lab på de vanlig tidspunktene. Her vil lab-assistenter være til stede for å hjelpe og svare på spørsmål relatert til programmeringsprosjektet.
@@ -36,10 +38,11 @@ Tidspunkter og rom for de enkelte gruppene vil komme i slutten av uke 41 basert 
 
 ### Neste steg - prosjektet og programmeringsoppgaver
 
-- [Mål med prosjektet -  Eclipse prosjekt med startkode og enhetstester](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/introduksjon.md)
-- [Oppgave 1: Klasser og GPS Punkter](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave1.md)
-- [Oppgave 2: Datakonvertering og referansetabeller](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave2.md)
-- [Oppgave 3: Hjelpemetoder for tabeller og beregninger](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave3.md)
-- [Oppgave 4: GPS Computer for beregninger](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave4.md)
-- [Oppgave 5: Visualisering og Easygraphics](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave5.md)
-- [Oppgave 6: Valgfrie ekstraoppgaver](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave6.md)
+- [GPS Data og formål med prosjektet](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/introduksjon.md)
+- [**Oppgave 0:** Eclipse-prosjekt med startkode og enhetstester](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/startkode.md)
+- [**Oppgave 1:** Klasser og GPS Punkter](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave1.md)
+- [**Oppgave 2:** Datakonvertering og referansetabeller](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave2.md)
+- [**Oppgave 3:** Hjelpemetoder for tabeller og beregninger](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave3.md)
+- [**Oppgave 4:** GPS Computer for beregninger](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave4.md)
+- [**Oppgave 5:** Visualisering og Easygraphics](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave5.md)
+- [**Oppgave 6:** Valgfrie ekstraoppgaver](https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/oppgave6.md)
