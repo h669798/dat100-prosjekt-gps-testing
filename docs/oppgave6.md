@@ -1,3 +1,7 @@
+## Programmeringsoppgavene
+
+- [Ekstra oppgaver](https://github.com/dat100hib/dat100-prosjekt/blob/master/docs/ekstraoppgaver.md) Disse er frivillige og tenkt som ekstra utfordringer for de som har lyst på det.
+
 ## Ekstraoppgaver
 
 ### Oppgave 4 - Ekstraoppgaver
