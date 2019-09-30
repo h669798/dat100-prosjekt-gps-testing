@@ -1,5 +1,7 @@
 ## Programmeringsoppgavene
 
+- [Ekstra oppgaver](https://github.com/dat100hib/dat100-prosjekt/blob/master/docs/ekstraoppgaver.md) Disse er frivillige og tenkt som ekstra utfordringer for de som har lyst på det.
+
 ### Oppgave 1 - GPS data innlesing/utskrift
 
 I denne oppgaven skal dere se på klassen [GPSDataReaderWriter.java](https://github.com/dat100hib/dat100-prosjekt/blob/master/src/no/hvl/dat100/prosjekt/GPSDataReaderWriter.java) som inneholder Java-kode for å lese inn en CVS-datafil med GPS punkter i formatet forklart tidligere.
