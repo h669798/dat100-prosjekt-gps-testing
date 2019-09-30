@@ -4,7 +4,7 @@ Mange sykkelcomputere, sportsklokker og fitness-applikasjoner bruker GPS data dv
 
 Formålet med dette prosjektet er å implementere Java-programmer som har tilsvarende funksjonalitet som en typisk sykkelcomputer. Avanserte sykkelcomputere gjør beregninger løpende basert på input data fra en GPS sensor. Java-programmene i dette prosjektet baseres på å lese GPS data fra en datafil. På den måten vil Java-programmet simulere en riktig sykkelcomputer og fungere som en slags virtuell (ikke fysisk) sykkelcomputer.
 
-Det siste målet med prosjektet er en Java-applikasjon som bruker EasyGraphics biblioteket til løpende (live) å gi syklisten (brukeren) informasjon svarende til det som skissert på bildet nedenfor. Her er tid og aktuell hastighet vist i øverste venstre hjørne og høydeprofilen er i midten. Videre er ruten er tegnet på et kort nederst der rød angir at sykkelruten går oppover, grønn at det går nedover og blå at det er flatt.
+Det siste målet med prosjektet er en Java-applikasjon som bruker EasyGraphics biblioteket til løpende (live) å gi syklisten (brukeren) informasjon svarende til det som skissert på bildet nedenfor. Her er tid og aktuell hastighet vist i øverste venstre hjørne og høydeprofilen er i midten. Videre er ruten tegnet på et kort nederst der rød angir at sykkelruten går oppover, grønn at det går nedover og blå at det er flatt.
 
 ![](assets/markdown-img-paste-20180909131911330.png)
 

@@ -4,7 +4,7 @@ Der er **ikke** ordinære forelesninger i uke 41, men der vil være programmerin
 
 ### Gruppepresentasjon ved programmerings-lab uke 42
 
-I uke 42 er det forelesninger på de vanlige tidspunktene.
+I uke 42 er der forelesninger på de vanlige tidspunktene.
 
 I uke 42 brukes programmeringslab'en til at hver gruppe gir en kort muntlig presentasjon av prosjektet sitt for 2-3 andre grupper.
 
