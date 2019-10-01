@@ -1,142 +1,82 @@
-### Oppgave 1 - GPS data innlesing/utskrift
+# Oppgave 2 - GPS data innlesing og referansetabeller
 
-I denne oppgaven skal dere se på klassen [GPSDataReaderWriter.java](https://github.com/dat100hib/dat100-prosjekt/blob/master/src/no/hvl/dat100/prosjekt/GPSDataReaderWriter.java) som inneholder Java-kode for å lese inn en CVS-datafil med GPS punkter i formatet forklart tidligere.
+I denne oppgaven skal vi se på hvordan GPS data kan leses inn fra fil og hvordan GPS punktene i filen kan representeres ved å bruke en tabell med pekere til GPSPoint-objekt.
 
-I klassen brukes fire tabeller med tekststrenger (typen String) til å representere GPS datapunktene
+Klassen `GPSDataRFileReader` inneholder ferdig Java-kode for å lese inn en CVS-datafil med GPS punkter i formatet forklart tidligere. Denne Java-koden er der ikke behov for endre i og vi skal først litt senere i faget lære om hvordan man leser og skrier i filer i Java.
+
+Fokus i denne oppgavene er på å implementere metoden i klassene `GPSData.java` som skal lagre innlest GPS data i form av en tabell av `GPSPoint`-objekt og hjelpeklassen `GPSDataConverter.java` som inneholder hjelpemetoder for å konvertere det data som leses inn til `GPSPoint`-objekt.
+
+#### 2a) GPS data konvertering
+
+Når data leses inn fra fil vil et GPS punkt være representert som strenger. Eksempelvis vil tidsdata  for et innlest GPS punkt være representert som strengen:
+
+```
+"2017-08-13T08:52:26.000Z"
+```
+
+Gjør ferdig implementasjon av metoden
 
 ```java
-String[] times;
-String[] latitudes;
-String[] longitudes;
-String[] elevations;
+public static int toSeconds(String timestr)
 ```
 
-Ideen er at times-tabellen brukes til å lagre tidspunktene fra GPS datapunktene, latitudes-tabellen brukes til å lagre breddegradene, longitudes-tabellen brukes til å lagre lengdegrader, og elevations-tabellen brukes til å lagre høyde. De resterende data i et GPS datapunkt skal vi ikke bruke.
+som omregner tidsdata som representert ovenfor til antall sekunder. For eksemplet ovenfor skal de 8 timer, 52 minutter og 26 sekunder regnes om til 31946 sekunder og returneres.
 
-Metoden
+Implementer metoden
 
 ```java
-public static GPSData readGPSFile(String filename)  
+public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 ```
 
-er allerede implementert og leser - linje for linje - i GPS datafilen og lagrer data i tabellene ovenfor.
+som tar Streng-representasjoner av tid, breddegrad, lengdegrad og høyde konverterer disse og oppretter et `GPSPoint`-objekt med de lagrede data.
 
-Ser vi på eksemplet fra tidligere der vi hadde fem datapunkter i filen da vil tabellene ha følgende innhold etter innlesing
+Hvis eksempelvis skal metoden kalles med
 
 ```java
-times = { "2017-08-13T08:52:26.000Z", "2017-08-13T08:53:00.000Z",
-          "2017-08-13T08:53:57.000Z", "2017-08-13T08:55:55.000Z",
-          "2017-08-13T08:57:57.000Z" }
-
-latitudes = { "60.385390", "60.385588", "60.385398", "60.383428", "60.376988" }
-
-longitudes = { "5.217217", , "5.217857","5.216950", "5.219823", "5.227082" }
-
-elevations = { "61.9", "56.2", "56.1","57.0", "105.5" }
-
+convert("2017-08-13T08:52:26.000Z","60.385390","5.217217","61.9"
 ```
 
-Dvs. informasjonen fra første GPS datapunkt står på indeks (posisjon) 0 i tabellen ovenfor, informasjon fra andre GPS datapunkt finnes på indeks 1 osv.
+da skal metoden returner et GPSPoint-objekt der tid er 31946, breddegrad er 60.385390, lengdegrad er 5.217217 og høyde er 61.9.
 
-#### 1a)
+#### 2b) Referansetabell med GPS punkt objekt
 
-Se på koden for `readGPSFile`-metoden for å forstå hvordan den virker.
+De GPS punkter som leses inn fra fil og konverteres skal representeres ved å bruke en referanasetabell dvs. en tabell der elementene som er lagret er pekere til `GPSPoint`-objekt.
 
-I klassen finnes starten på en metode
+Starten på implementasjonen finnes i klassen `GPSData.java`:
 
 ```java
-public static void printGPSData(GPSData gpsdata)
+public class GPSData {
+
+	private GPSPoint[] gpspoints;
+	protected int antall = 0;
+
+  [...]
 ```
 
-som skal skrive det innleste GPS data ut på skjermen (Eclipse Console-vinduet). Metoden bruker en for-løkke for å gå igjennom alle elementene i times-tabellen for å skrive disse ut på skjermen.
+Objektvariabelen `gpspoints` skal brukes til å peke på referansetabellen av GPS punkter. Objektvariabelen `antall` skal brukes ifm. med innsettelse i tabellen til å holde kontroll på hvor (dvs. på hvilken posisjon/indeks) neste vare skal settes inn.
 
-Hvis du kjører main-metoden i `GPSDataReaderWriter`-klassen, vil du se utskriften i Console-vinduet.
+Variabelen `antall` vil til ethvert tidspunkt angi hvor mange GPS punkter som er satt inn i tabellen. Indeks der det ikke er satt inn noen vare vil ha verdien `null` (en null-peker).
 
-#### 1b)
+Objektvariablen `antall` har modifikatoren `protected` for å gjøre det enklere å teste klassen. Testene for klassen finnes i klassen `GPSDataTester.java`.
 
-Utvid implementasjonen av `printGPSData`-metoden slik at også innhold fra de tre andre tabellene også skrives ut.
+Metodene som allerede er implementert i klassen GPSDatFileReader er allerede implementert og leser - linje for linje - i GPS datafilen og lagrer data i tabellen.
 
-For den ferdige implementasjonen skal begynnelsen på utskriften i Console-vinduet se slik ut
+Gjør ferdig implementasjonen av følgende metoder:
 
-```
-19
-time,latitude,longitude,elevation
-2017-08-13T08:52:26.000Z,60.385390,5.217217,61.9
-2017-08-13T08:53:00.000Z,60.385588,5.217857,56.2
-2017-08-13T08:53:57.000Z,60.385398,5.216950,56.1
-2017-08-13T08:55:55.000Z,60.383428,5.219823,57.0
-2017-08-13T08:57:57.000Z,60.376988,5.227082,105.5
-```
+- `public GPSData(int antall)` som er en kontruktør for klassen. Konstruktøren skal opprettet en tabell av GPS punkter med størrelse gitt ved parameteren `n` og sette `antall` lik `0` (siden første element skal inn på position 0).
 
-### Oppgave 2 - Konvertering av GPS data fra tekststrenger til tall
+- `public Vare[] getVarer()` som returnerer en referanse til tabellen `varer`
 
-I oppgave 1 har vi sett at GPS datafilen kan leses inn og GPS datapunkter kan representeres ved å bruke fire tabeller med strenger. For å kunne gjøre beregninger på GPS dataene må vi konvertere strengene med data til tall.
+- `protected boolean insertGPS(GPSPoint gpspoint)` som setter inn GPS punktet `gpspoint` i `gpspoints`-tabellen på posisjonen angitt ved objektvariablen `antall`. Videre skal metoden inkrementere `antall` slik neste punkt kommmer inn på neste posisjon. Metoden skal kun sette inn `gpspoint` hvis der er plass i tabellen dvs. hvis `antall` er strengt mindre enn `gpspoints.length`. Metoden skal returnere `true` om punktet blev satt inn og `false` ellers.
 
-Formålet med klassen [GPSDataConverter.java](https://github.com/dat100hib/dat100-prosjekt/blob/master/src/no/hvl/dat100/prosjekt/GPSDataConverter.java) er å implementere metoder som kan gjøre denne konverteringen.
+- `public boolean insert(String time, String latitude, String longitude, String elevation)` som tar GPS punkt data i streng-representasjon og setter inn et tilsvarende `GPSPoint`-objekt i `gpspoints`-tabellen. **Hint:** Konverter data, opprette et nytt `GPSPoint-objekt` og bruk metoden ovenfor.
 
-I klassen finnes fire tabeller
+- `public void print()` som skal skrive ut GPS data som finnes i `gpspoints`-tabellen på følgende formen
 
-```java
-private String[] timesstr, latitudesstr, longitudesstr, elevationsstr;
-```
+====== Konvertert GPS Data - START ======
+1 (1.0,2.0) 3.0
+2 (4.0,5.0) 6.0
+3 (7.0,8.0) 9.0
+====== Konvertert GPS Data - SLUTT ======
 
-som inneholder streng-representasjon av GPS data (som forklart i oppgave 1) og vi skal nå konvertere disse data og lagre informasjonen i fire nye tabeller
-
-```java
-public int[] times;
-public double[] latitudes, longitudes, elevations;
-```
-
-Ser vi på et eksempel GPS datapunkt skal vi altså konvertere
-
-- Strengen `"2017-08-13T08:52:26.000Z"` til heltallet (int) `31946` som angir antall sekunder fra midnatt.
-- Strengen `"60.385390"` til flyttallet (double) `60.385390`
--	Strengen `"5.217217"` til flyttallet (double) `5.217217`
--	Strengen `"61.9"` til flyttallet `61.9`
-
-Dette skal gjøres for alle elementer i tabellene.
-
-Ser vi eksempelvis på latitudesstr-tabellen med strenger
-
-```java
-latitudesstr = { "60.385390", "60.385588", "60.385398", "60.383428", "60.376988" }
-```
-
-da skal denne konverteres til en latitude-tabellen av tal som ser slik ut
-
-```java
-latitudes = { 60.385390, 60.385588, 60.385398, 60.383428, 60.376988}
-```
-
-#### 2a)
-
-Metoden ```public void convert()``` i klassen GPSDataConverter inneholder starten på kode som kan gjøre denne konverteringen.
-
-Utvid convert-metoden slik den konverterer breddegrader, lengdegrader og høyder.
-
-#### 2b)
-
-Gjør ferdig implementasjon av `toSeconds`-metoden som omregner tidsdata til antall sekunder og bruk den i `convert`-metoden slik at tidsinformasjonen også blir konvertert.
-
-Klassen [GPSDataConverterTester.java](https://github.com/dat100hib/dat100-prosjekt/blob/master/src/no/hvl/dat100/prosjekt/test/GPSDataConverterTester.java) inneholder en rekke enhetstest som du kan bruke til å teste implementasjonen din.
-
-#### 2c)
-
-Til slutt skal dere implementere metoden `print()` som skal skrive ut det konverterte data. Denne metoden vil også bli kjørt av enhetstestene og begynnelsen av utskriften skal se slik ut
-
-```
-long
-Konvertert GPS Data
-31946 (60.38539,5.217217) 61.9
-31980 (60.385588,5.217857) 56.2
-32037 (60.385398,5.21695) 56.1
-32155 (60.383428,5.219823) 57.0
-32277 (60.376988,5.227082) 105.5
-32406 (60.370383,5.23205) 49.7
-32527 (60.359813,5.237472) 40.2
-32651 (60.361153,5.243403) 70.4
-```
-
-#### 2d)
-
-Sjekk at første delen av utskriften stemmer overens med innholdet i log-datafilen som blev lest inn.
+**Hint**: bruk løkke og `toString`-metoden på `GPSPoint`-objekt
