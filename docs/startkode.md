@@ -44,7 +44,7 @@ Du må nå laste ned (klone) oppbevaringsplassen med kode som du skal ta utgangs
 
 men nå med oppbevaringsplassen gitt i lenken ovenfor.
 
-Du skal nå ha et prosjekt i Eclipse med navnet `dat100-prosjekt-2019`
+Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-startcode`
 
 Eclipse-prosjektet er organisert i et antall pakker svarende til hver oppgave i programmeringsprosjektet. Pakkene inneholder de klasser og metoder som gruppen skal implementere i oppgavene som presenteres nedenfor.
 
@@ -64,7 +64,7 @@ Du kloner oppbevaringsplassen på samme måten som du gjorde i oppgave 3b på f�
 
 men nå med oppbevaringsplassen gitt i lenken ovenfor.
 
-Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-testing-2019` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstester.
+Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-testing` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstester.
 
 Konvensjonen er at enhetstester for en klasse `X.java` er implementert i filen med navn `XTester`.java. Eksempelvis inneholder klassen `GPSUtilsTester.java` enhetstester for klassen `GPSUtils.java` hvor dere skal implementere metoder.
 
