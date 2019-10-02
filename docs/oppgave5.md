@@ -12,7 +12,7 @@ For GPS datafilen `medium.log` skal visualiseringen se ut som nedenfor der høyd
 
 ![](assets/markdown-img-paste-20180909115303289.png)
 
-I klassen `showProfile.java` finnes allerede en main-metode som setter opp et vindu som kan brukes til å tegne høydeprofilen og som ber om navn på den datafil som skal visualiseres (short, medium, long).
+I klassen `showProfile.java` finnes allerede en `main`-metode som setter opp et vindu som kan brukes til å tegne høydeprofilen og som ber om navn på den datafil som skal visualiseres (short, medium, long,vm).
 
 Klassen sørger allerede for å lese inn data fra GPS datafilen ved oppstart og lagre GPS data i en tabell `gpspoints` med GPS punkter
 
@@ -26,21 +26,21 @@ Implementer metoden
 showHeightProfile(int ybase)
 ```
 
-som tegner høydeprofilen der parameteren `ybase` angir hvor på y-aksen bunnen av en søyle skal starte.
+som tegner høydeprofilen der parameteren `ybase` angir hvor på y-aksen bunnen av en søylene skal starte.
 
 For å gjøre oppgaven enklere kan det antas at hvert punkt (pixel) i vinduet svarer til en høyde-meter. Eventuelt negative høyder skal ignoreres – dvs. behandles som om de hadde verdien 0.
 
 ### Hastighet
 
-I denne oppgaven skal hastigheten der blev kjørt med i løpet av visualiseres. For GPS datafilen `medium.log` skal visualiseringen se slik ut
+I denne oppgaven skal hastigheten der blev kjørt med i løpet av ruten visualiseres. For GPS datafilen `medium.log` skal visualiseringen se slik ut
 
 ![](assets/markdown-img-paste-20180909120055723.png)
 
 der denne grønne linjen indikerer gjennomsnittshastigheten for hele ruten.
 
-Ferdiggjør implementasjonen av metoden showSpeedProfile i klassen `ShowSpeed.java`
+Ferdiggjør implementasjonen av metoden `showSpeedProfile` i klassen `ShowSpeed.java`
 
-Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller metoden `showSpeedProfile`. GPS data blir automatisk lest inn i tabeller med samme navn som for høydeprofil ovenfor.
+Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller metoden `showSpeedProfile`. GPS data blir automatisk lest inn i `gpspoints`-tabell  med samme navn som for høydeprofil ovenfor og der opprettes også et `GPSComputer`-objekt som kan brukes til å beregne nøkkeltall med.
 
 ### Sykkelruten
 
@@ -50,7 +50,9 @@ I denne oppgaven ruten visualieres på et kart og til slutt skrive ut statistikk
 
 der y-aksen svarer til breddegrader og x-aksen svarer til lengdegrader.
 
-Ferdiggjør implementasjonen av metodene i klassen `ShowRoute.java`. Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller de tre metodene `ShowRouteMap`, `ShowStatistics` og `PlayRoute`.
+Ferdiggjør implementasjonen av metodene i klassen `ShowRoute.java`. Der finnes allerede en `main`-metode i klassen som setter opp vindu og som kaller de tre metodene `ShowRouteMap`, `ShowStatistics` og `PlayRoute`.
+
+Metoden som skal implementeres er:
 
 ```java
 public double ystep()
