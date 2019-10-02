@@ -1,12 +1,10 @@
-# Oppgave 1: Klasse for GPS punkter
+# Oppgave 1: Klasse for GPS datapunkter
 
-I denne oppgaven skal der implementeres en klasse `GPSPoint.java` for å kunne representere GPS datapunkter. Ideen er at et GPS punkt skal representeres som et objekt av denne klassen og programmet skal ha et slikt objekt for hvert GPS punkt. For hvert GPS punkt får vi behov for å lagre tidspunkt, breddegrad, lengdegrad og høyde (elevation).
+I denne oppgaven skal der implementeres en klasse `GPSPoint.java` for å kunne representere GPS datapunkter. Ideen er at et GPS punkt skal representeres som et objekt av `GPSPoint`-klassen og programmet skal ha et slikt objekt for hvert GPS punkt. For hvert GPS punkt får vi behov for å lagre tidspunkt, breddegrad, lengdegrad og høyde.
 
 ### a) Objektvariable og konstruktør
 
-Se på start-koden for klassen `GPSPoint.java` i pakken `no.hvl.dat100ptc.oppgave1`
-
-Skriv kode slik klassen får tre objektvariable:
+Se på start-koden for klassen `GPSPoint.java` i pakken `no.hvl.dat100ptc.oppgave1`. Utvid startkoden for klassen slik klassen får følgende objektvariable:
 
 -	`time` (heltall) som angir tiden i sekunder
 -	`latitude` (desimaltall) som angir breddegrad
@@ -18,19 +16,23 @@ som alle skal være `private` dvs. kun synlige innenfor klassen.
 Videre skal klassen ha en *konstruktør*
 
 ```java
-GPSPoint(int time, double latitude, double longitude, double elevation)
+public GPSPoint(int time, double latitude, double longitude, double elevation)
 ```
 
 som kan gi verdi til alle objektvariable.
 
-Test implementasjonen din ved å kjøre testene i test-klassen `GPSPointeTester.java`
+Test implementasjonen ved å kjøre testene i test-klassen `GPSPointeTester.java`
 
 ### b) Hent/sett-metoder
 
-Gjør ferdig implementasjonen av get/set metoder og test de med enhetstestene.
+Gjør ferdig implementasjonen av hent/sett (get/set)-metoder og test de med enhetstestene.
 
-### c) Strengrepresentasjon
+### c) Representasjo som tekststreng
 
-Gjør ferdig implementasjonen av `toString()`-metoden som returnerer en strengrepresentasjon av objektvariablene på formen: `1 (2.0,3.0) 5.0\n` der `1` er tiden, `(2.0,3.0)` er (breddegrad,lengdegrad) og 5.0 er høyden.
+Gjør ferdig implementasjonen av `toString()`-metoden som returnerer en strengrepresentasjon av et `GPSPoint`-objekt på formen:
+
+`1 (2.0,3.0) 5.0\n`
+
+der `1` er tiden, `(2.0,3.0)` er (breddegrad,lengdegrad) og 5.0 er høyden.
 
 Test implementasjonen ved å bruke enhetstestene.
