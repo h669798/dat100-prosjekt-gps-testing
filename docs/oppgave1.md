@@ -27,7 +27,7 @@ Test implementasjonen ved å kjøre testene i test-klassen `GPSPointeTester.java
 
 Gjør ferdig implementasjonen av hent/sett (get/set)-metoder og test de med enhetstestene.
 
-### c) Representasjo som tekststreng
+### c) Representasjon som tekststreng
 
 Gjør ferdig implementasjonen av `toString()`-metoden som returnerer en strengrepresentasjon av et `GPSPoint`-objekt på formen:
 
