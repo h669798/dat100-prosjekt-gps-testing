@@ -10,7 +10,11 @@ Java-programmeringen i prosjektet vil basere seg på det som er gjennomgått i f
 
 Deler av prosjektet vil sannsynligvis oppleves som krevende for en del. Det gjelder i hovedsak om å jobbe seriøst med programmeringsoppgavene og få så mye til som dere klarer.
 
-På Canvas er der opprettet et [diskusjonsforum](https://hvl.instructure.com/courses/10051/discussion_topics/57920) for spørsmål og svar omkring prosjektet. Det er **IKKE** lov å legge ut ferdige løsninger på dette forum'et. Det anbefales også å se på forelesningsnotatene fra forelesningen der programmeringsprosjektet blev introdusert.
+På Canvas er der opprettet et **diskusjonsforum** for spørsmål og svar omkring prosjektet:
+
+https://hvl.instructure.com/courses/10051/discussion_topics/57920
+
+Det er **IKKE** lov å legge ut ferdige løsninger på dette forum'et. Det anbefales også å se på forelesningsnotatene fra forelesningen der programmeringsprosjektet blev introdusert.
 
 ## Uke 41 - Programmeringsoppgaver
 
