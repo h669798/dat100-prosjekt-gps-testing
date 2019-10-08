@@ -59,7 +59,7 @@ Variabelen `antall` vil til ethvert tidspunkt angi hvor mange GPS punkter som er
 
 Gjør ferdig implementasjonen av følgende metoder:
 
-- `public GPSData(int antall)` som er en kontruktør for klassen. Konstruktøren skal opprette en tabell av GPS punkter med størrelsen gitt ved parameteren `n` og sette `antall` lik `0` (siden første element skal inn på position 0).
+- `public GPSData(int n)` som er en kontruktør for klassen. Konstruktøren skal opprette en tabell av GPS punkter med størrelsen gitt ved parameteren `n` og sette `antall` lik `0` (siden første element skal inn på position 0).
 
 - `protected boolean insertGPS(GPSPoint gpspoint)` som setter inn GPS punktet `gpspoint` i `gpspoints`-tabellen på posisjonen angitt ved objektvariablen `antall`. Videre skal metoden inkrementere `antall` slik neste punkt kommmer inn på neste posisjon. Metoden skal kun sette inn `gpspoint` om der er plass i tabellen dvs. hvis `antall` er strengt mindre enn `gpspoints.length`. Metoden skal returnere `true` om punktet blev satt inn og `false` ellers.
 
@@ -77,4 +77,4 @@ Gjør ferdig implementasjonen av følgende metoder:
 
 **Hint**: bruk løkke og `toString`-metoden på `GPSPoint`-objekt
 
-Metodene som allerede er implementert i klassen `GPSDataFileReader.java` leser - linje for linje - i GPS datafilen og lagrer data i tabellen ved å bruke `insert`-metoden. Dette betyr at punktene i `gpspoint`-tabellen svarer til ruten som er representert i GPS datafilen. 
+Metodene som allerede er implementert i klassen `GPSDataFileReader.java` leser - linje for linje - i GPS datafilen og lagrer data i tabellen ved å bruke `insert`-metoden. Dette betyr at punktene i `gpspoint`-tabellen svarer til ruten som er representert i GPS datafilen.
