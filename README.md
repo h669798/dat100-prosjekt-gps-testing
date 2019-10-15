@@ -28,7 +28,7 @@ Programmeringslab'en i uke 42 brukes til at hver gruppe gir en kort muntlig pres
 
 Ved presentasjon må hver gruppe gi en kort demonstrasjon av Java-programmene sine og gå igjennom utvalgte deler av koden og forklare hvordan oppgavene er løst. Om det er ting som gruppen ikke fikk til å fungere, kan dette også diskuteres som en del av presentasjonen.
 
-Tidspunkter og rom for de enkelte gruppene vil komme i slutten av uke 41 basert på hva som er meldt inn via Canvas ifm. etablering av grupper.
+Tidspunkter og rom for de enkelte gruppene vil komme i slutten av uke 41 basert på hva som er meldt inn via Canvas ifm. etablering av grupper: https://hvl.instructure.com/courses/10051/files/599196?module_item_id=167371
 
 ### Tips til presentasjonen
 
