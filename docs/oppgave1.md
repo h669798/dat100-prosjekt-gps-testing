@@ -1,6 +1,8 @@
 # Oppgave 1: Klasse for GPS datapunkter
 
-I denne oppgaven skal der implementeres en klasse `GPSPoint.java` for å kunne representere GPS datapunkter. Ideen er at et GPS punkt skal representeres som et objekt av `GPSPoint`-klassen og programmet skal ha et slikt objekt for hvert GPS punkt. For hvert GPS punkt får vi behov for å lagre tidspunkt, breddegrad, lengdegrad og høyde.
+I denne oppgaven skal der implementeres en klasse `GPSPoint.java` for å kunne representere GPS datapunkter.
+
+Ideen er at et GPS punkt skal representeres som et objekt av `GPSPoint`-klassen og programmet skal ha et slikt objekt for hvert GPS punkt. For hvert GPS punkt får vi behov for å lagre tidspunkt, breddegrad, lengdegrad og høyde.
 
 ### a) Objektvariable og konstruktør
 

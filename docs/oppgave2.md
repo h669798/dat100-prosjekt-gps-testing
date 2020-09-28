@@ -53,7 +53,7 @@ public class GPSData {
   [...]
 ```
 
-Objektvariabelen `gpspoints` skal brukes til å peke på referansetabellen av GPS punkter. Objektvariabelen `antall` skal brukes ifm. med innsettelse i tabellen til å holde kontroll på hvor (dvs. på hvilken posisjon/indeks) neste punkt skal settes inn.
+Objektvariablen `gpspoints` skal brukes til å peke på referansetabellen av GPS punkter. Objektvariabelen `antall` skal brukes ifm. med innsettelse i tabellen til å holde kontroll på hvor (dvs. på hvilken posisjon/indeks) neste punkt skal settes inn.
 
 Variabelen `antall` vil til ethvert tidspunkt angi hvor mange GPS punkter som er satt inn i tabellen. Indeks der det ikke er satt inn noen vare vil ha verdien `null` (en null-peker). Objektvariablen `antall` har modifikatoren `protected` for å gjøre det enklere å teste klassen. Testene for klassen finnes i klassen `GPSDataTester.java`.
 

@@ -6,7 +6,7 @@ Oppgaven består å i gjøre ferdig implementasjonen av metodene nedenfor i klas
 
 #### a)
 
-Metoden
+Implementer metoden
 
 ```java
 double findMin(double[] da)
@@ -16,7 +16,7 @@ som finner minste tall i en tabell med flyttall. Det kan antas at der er minst e
 
 #### b)
 
-Metoden
+Implementer metoden
 
 ```java
 public static double[] getLatitudes(GPSPoint[] gpspoints)
@@ -26,7 +26,7 @@ som tar en tabell med GPS punkter som parameter og returnerer en tabell av desim
 
 #### c)
 
-Metoden
+Implementer metoden
 
 ```java
 public static double[] getLongitudes(GPSPoint[] gpspoints)
@@ -36,7 +36,7 @@ som er tilsvarende `getLatitudes`-metoden ovenfor men for lengdegrader.
 
 #### d)
 
-Metoden
+Implementer metoden
 
 ```java
 public static double distance(GPSPoint gpspoint1, GPSPoint gpspoint2) {
@@ -49,9 +49,11 @@ som beregner avstanden *d* i meter mellom to GPS punkter på jordkloden ved bruk
 
 der *R = 6371000* meter er jordens gjennomsnittsradius.
 
-**Hint**: Se på oppgave 5 fra programmerinslab 8: https://github.com/dat100hib/dat100public/blob/master/programmering/jplab8/JP8.md Dette gjelder også oppgaven som følger nedenfor.
+**Hint** Math-klassen: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html inneholder de metoder som trengs inkl. `atan2` og `toRadians` metoder.
 
 #### e)
+
+Implementer metoden
 
 ```java
 public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
@@ -61,7 +63,7 @@ som beregninger gjennomsnittshastighet i **km/t** om man beveger seg fra punktet
 
 #### f)
 
-Metoden
+Implementer metoden
 
 ```java
 public static String formatTime(int secs)
@@ -71,7 +73,7 @@ som returnerer en streng på formatet `hh:mm:ss` der tiden i sekunder fra midnat
 
 #### g)
 
-Metoden
+Implementer metoden
 
 ```java
 public static String formatDouble(double d)

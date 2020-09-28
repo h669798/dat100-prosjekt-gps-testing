@@ -14,11 +14,9 @@ med konvertert GPS data og metodene som implementeres skal bruke data fra denne 
 
 Testklassen for denne oppgave er `GPSComputerTester.java`.
 
-Følgende metoder skal implementeres
-
 #### a)
 
-Metoden
+Implementer metoden
 
 ```java
 public double totalDistance()
@@ -28,7 +26,7 @@ som beregner den totale distansen på ruten som GPS dataene i `gpspoints`-tabell
 
 #### b)
 
-Metoden
+Implementer metoden
 
 ```java
 public double totalElevation()
@@ -38,7 +36,7 @@ som beregner det totale antall høydemeter på ruten. Husk kun å telle høydeme
 
 #### c)
 
-Metoden
+Implementer metoden
 
 ```java
 public int totalTime()
@@ -48,7 +46,7 @@ som skal beregne den totale tiden det har tatt å sykle ruten svarende til de in
 
 #### d)
 
-Metoden
+Implementer metoden
 
 ```java
 public double[] speeds()
@@ -60,7 +58,7 @@ som skal returnere en tabell med gjennomsnitshastigheter mellom hver av de punkt
 
 #### e)
 
-Metoden
+Implementer metoden
 
 ```java
 public double maxSpeed()
@@ -70,6 +68,7 @@ som returnerer den største hastigheten vi har beveget oss med mellom to punkter
 
 #### f)
 
+Implementer metoden
 ```java
 public double averageSpeed()
 ```
@@ -78,7 +77,7 @@ som returnerer gjennomsnittshastigheten vi har beveget oss med total sett for he
 
 #### g)
 
-Metoden
+Implementer metoden
 
 ```java
 public double kcal(double weight, int secs, double speed)
@@ -102,7 +101,7 @@ Hastighet i km/t kan omregnes til mph ved å gange med en faktor *0.62*. MET vil
 
 #### h)
 
-Metoden
+Implementer metoden
 
 ```java
 public double totalKcal(double weight)
@@ -112,7 +111,7 @@ som beregner den totale energi-mengden som er forbrent på ruten.
 
 #### i)
 
-Metoden
+Implementer metoden
 
 ```java
 public void displayStatistics()
