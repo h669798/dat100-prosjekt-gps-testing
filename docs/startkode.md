@@ -6,35 +6,25 @@ Det ene Eclipse-prosjekt inneholder en rekke Java-klasser som utgjør rammen run
 
 Det andre Eclipse-prosjektet inneholder en rekke enhetstester som skal bruke til automatisk å teste den koden dere skriver.
 
-## Steg 1 - Eclipse-prosjekt med startkode
+Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor og også vist i video som er lagt ut på Canvas: **TODO**
+
+## Steg 1 - Eclipse-prosjekt med startkode (Fork + Clone + Import)
 
 Gruppen får adgang til startkoden via [GitHub classroom](https://classroom.github.com/) som er en overbygging på github.
 
-### Akseptere programmeringsoppgaven
+### Fork oppbevaringsplassen
 
-Start med å akseptere programmeringsoppgaven for å få tilgang til den Java-kode du skal ta utgangspunkt i. Gruppen får adgang til startkoden ved at en av gruppemedlemmene åpner en nettleser og går til følgende adresse (URL):
+Gå inn på github på oppbevaringsplassen som inneholder start-koden: https://github.com/dat100hib/dat100-prosjekt-startkode-2020
 
-https://classroom.github.com/a/yHWK65mq
-
-Ved å gå til denne adressen kommer du inn i github classroom og kan akseptere oppgaven. Om det ikke er gjort tidligere er det mulig at du må akseptere *Authorize application*
-
-![](assets/markdown-img-paste-20191002114140977.png)
-
-Etter dette skal følgende etterhvert komme opp
-
-![](assets/markdown-img-paste-20191002114340329.png)
-
-Trykk på lenken rett etter *your assignment has been created here*. Slutten på den lenken du får vil ikke være helt identisk med det er vist på billedet siden det er en lenke til din egen oppbevaringsplass for den startkoden du skal ta utgangspunkt i.
+Begynn med å opprette en kopi av denne oppbevaringsplassen ved å bruke "fork" (se øverste høyre hjørne på github-websiden). Du vil da få en kopi av oppbevaringsplassen med startkoden på den egen github konto.
 
 ### Laste ned og importere startkode i Eclipse
 
-Du må nå laste ned (klone) oppbevaringsplassen med kode som du skal ta utgangspunkt i:
+Du må nå laste ned (klone) oppbevaringsplassen med kode som du opprette i Steg 1. Det er **viktig** at du **ikke** kloner https://github.com/dat100hib/dat100-prosjekt-startkode-2020 men den oppbevarinhsplassen som du opprettet på din egen konto da du utførte fork.
 
-1.	Velg *Clone or Download* på github-siden du kom frem til ved å klikke på lenken i bildet ovenfor
+1.	Velg *Clone or Download* på github-siden
 
-  ![](assets/markdown-img-paste-20191002114433687.png)
-
-2.	Velg lenken og last ned en kopi (clone) oppbevaringsplassen på samme måten som du gjorde i oppgave 3b på første programmeringslab: https://github.com/dat100hib/dat100public/blob/master/programmering/jplab1-onsdag/JP1.md#oppgave-3-sjekke-ut-kode-fra-github men nå med oppbevaringsplassen du fikk ved bruke lenken du fikk ved å velge **Clone or Download** på bilder ovenfor.
+2.	Velg lenken og last ned en kopi (clone) oppbevaringsplassen på samme måten som du gjorde i Eclipse i tidligere oppgaver for å importere.
 
 Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-startcode`
 
@@ -44,15 +34,13 @@ De steder i koden hvor der skal implementeres Java-kode er merket med en komment
 
 For å kjøre det enklere ifm. presentasjon av oppgaven å finne de plassene hvor dere har lagt til kode, anbefales det å la kommentarene med `TODO – START` og `TODO SLUTT` bli stående i koden.  
 
-## Steg 2 - Eclipse-prosjekt med enhetstester
+## Steg 2 - Eclipse-prosjekt med enhetstester (Clone + Import)
 
 Formålet med enhetstestene er å gjøre det enklere å teste metoder etterhvert som de implementeres uten å skulle starte selve sykkelcomputer-applikasjonen. Et Eclipse-prosjekt med ferdige enhetstester finnes finnes på følgende github oppbevaringsplass:
 
-https://github.com/dat100hib/dat100-prosjekt-testing-2019
+https://github.com/dat100hib/dat100-prosjekt-testing-2020
 
-Du kloner oppbevaringsplassen på samme måten som du gjorde i oppgave 3b på første programmeringslab: https://github.com/dat100hib/dat100public/blob/master/programmering/jplab1-onsdag/JP1.md#oppgave-3-sjekke-ut-kode-fra-github
-
-men nå med oppbevaringsplassen gitt i lenken ovenfor.
+Du kloner oppbevaringsplassen og importerer inn i Eclipse på samme måten som tidligere men nå med oppbevaringsplassen gitt i lenken ovenfor. Du trenger *ikke* å gjøre fork på denne oppbevaringsplassen siden du ikke trenger din egen kopi av oppbevaringsplassen på github.
 
 Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-testing` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstester.
 
@@ -70,6 +58,6 @@ I mappen `logs` i Eclipse-prosjektet finnes tre CSV filer filer: `short.log`, `m
 
 ## Dele oppbevaringsplass mellom gruppemedlemmer
 
-Hvis gruppen ønsker å bruke en felles github-oppbevaringsplass for koden, er det tilstrekkelig at en i gruppen aksepterer oppgaven som beskrevet i a) og deretter gir de andre medlemmene i gruppen tilgang til oppbevaringsplassen (repository). Dette kan gjøres ved å logge inn på www.github.com, gå til oppbevaringsplassen og via *Settings* for oppbevaringsplassen legge til de andre medlemmer i gruppen som *Collaborators*.
+Hvis gruppen ønsker å bruke en felles github-oppbevaringsplass for koden, er det tilstrekkelig at en i gruppen utfører steg 1 ovenfor og gir de andre medlemmene i gruppen tilgang til oppbevaringsplassen (repository). Dette kan gjøres ved å logge inn på www.github.com, gå til oppbevaringsplassen og via *Settings* for oppbevaringsplassen legge til de andre medlemmer i gruppen som *Collaborators*.
 
 De andre gruppemedlemmene må da klone oppbevaringsplassen ned på egen PC ved å velge *File → Import → Git → Projects from Git → Clone URI* i Eclipse og lime inn URL’en til den felles oppbevaringsplassen. Endringer i filer i prosjektet lastes opp til den felles oppbevaringsplassen ved å bruke  *Team | Add to Index* etterfulgt av *Team | Commit … | Commit and Push* og hentes ned ved å bruke *Team | Pull*.
