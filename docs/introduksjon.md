@@ -12,7 +12,7 @@ Det ultimative målet med prosjektet er en Java-applikasjon som bruker EasyGraph
 
 ### GPS data format
 
-Der finnes ulike formater som kan brukes til å lagre GPS data. I dette prosjektet skal vi ta utgangs-punkt i tekstfiler som bruker en variant av *CSV* formatet (Comma-Separated-Values). Dette betyr at en datafil med eksempelvis fem GPS datapunkter representeres på følgende måte
+Der finnes ulike formater som kan brukes til å lagre GPS data. I dette prosjektet skal vi ta utgangs-punkt i tekstfiler som bruker en variant av *CSV* formatet (Comma-Separated-Values). Dette betyr at en datafil med eksempelvis fem GPS datapunkter representeres på følgende måte:
 
 ```
 5
