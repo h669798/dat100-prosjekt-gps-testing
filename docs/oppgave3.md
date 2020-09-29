@@ -2,7 +2,7 @@
 
 I denne oppgaven skal det implementeres noen hjelpe-metoder i klassen `GPSUtils.java` som vi skal bruke seinere i prosjektet til å gjøre beregninger på de GPS datapunkter som blir lest inn og lagret via metodene og klassene implementert i oppgave 2.
 
-Oppgaven består å i gjøre ferdig implementasjonen av metodene nedenfor i klassen `GPSUtils.java` og bruke enhetstestene i klassen `GPSUtilsTester.java` til løpende å teste koden.
+Oppgaven består i å gjøre ferdig implementasjonen av metodene nedenfor i klassen `GPSUtils.java` og bruke enhetstestene i klassen `GPSUtilsTester.java` til løpende å teste koden.
 
 #### a)
 
@@ -22,7 +22,9 @@ Implementer metoden
 public static double[] getLatitudes(GPSPoint[] gpspoints)
 ```
 
-som tar en tabell med GPS punkter som parameter og returnerer en tabell av desimaltall inneholdende breddegradene for GPS-punktene. **Hint:** metoden skal først opprette en tabell av desimaltall med samme lengde som `gpspoint` og så kopiere de enkelte breddegrader over i den nye tabellen. Husk at `getLatitudes`-metoden på et `GPSPoint`-objekt kan brukes til å lese ut breddegrad i et objekt.   
+som tar en tabell med GPS punkter som parameter og returnerer en tabell av desimaltall inneholdende breddegradene for GPS-punktene.
+
+**Hint:** metoden skal først opprette en tabell av desimaltall med samme lengde som `gpspoint` og så kopiere de enkelte breddegrader over i den nye tabellen. Husk at `getLatitudes`-metoden på et `GPSPoint`-objekt kan brukes til å lese ut breddegrad i et objekt.   
 
 #### c)
 
@@ -49,7 +51,7 @@ som beregner avstanden *d* i meter mellom to GPS punkter på jordkloden ved bruk
 
 der *R = 6371000* meter er jordens gjennomsnittsradius.
 
-**Hint** Math-klassen: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html inneholder de metoder som trengs inkl. `atan2` og `toRadians` metoder.
+**Hint:** Math-klassen: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html inneholder de metoder som trengs inkl. `atan2` og `toRadians` metoder.
 
 #### e)
 
@@ -60,6 +62,8 @@ public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 ```
 
 som beregninger gjennomsnittshastighet i **km/t** om man beveger seg fra punktet gitt ved `gpspoint1` til punktet `gpspoint2` på det antall sekunder som er gitt med parameteren `secs`.
+
+**Hint:** Bruk metoden `distance` fra d).
 
 #### f)
 

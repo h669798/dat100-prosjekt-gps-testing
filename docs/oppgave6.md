@@ -20,7 +20,7 @@ som finner den del av ruten som har den høyeste stigningsprosent.
 
 ### b) Ekstraoppgaver for oppgave 5
 
-Utvid oppgave for visualisering slik med tekststrenger som viser enheter på y-aksen.
+Utvid oppgave for visualisering med tekststrenger som viser enheter på y-aksen.
 
 Utvid `showHeightProfile`-metoden slik kurven kan tegnes i skalert real-tid. Husk at tabellen med GPS punkter gir tidspunkt for hvert datapunkt og vi kan utefra dette finne den reelle tiden mellom to punkter. For at det ikke skal ta for lang tid å tegne høydeprofilen skal brukeren kunne taste inn et tall som angir hvor mye tiden skal skaleres ned. Eksempelvis vil tallet 100 angi at hvert sekund i realtid skal tilsvare til 1/100 sekunder når datafilen visualiseres.
 

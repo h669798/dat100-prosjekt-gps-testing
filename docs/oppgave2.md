@@ -1,10 +1,10 @@
 # Oppgave 2 - GPS data innlesing og referansetabeller
 
-Denne delen av prosjektet handler om hvordan GPS data kan leses inn fra fil og hvordan GPS punktene i filen kan representeres ved å bruke en tabell med pekere til `GPSPoint`-objekter
+Denne delen av prosjektet handler om hvordan GPS data kan leses inn fra fil og hvordan GPS punktene i filen kan representeres ved å bruke en tabell med pekere til `GPSPoint`-objekt.
 
-Klassen `GPSDataRFileReader.java` inneholder ferdig Java-kode for å lese inn en CVS-datafil med GPS punkter i formatet forklart tidligere. Denne Java-koden er der ikke behov for endre i og det er førs litt senere i faget vi skal ta for oss hvordan hvordan en leser fra - og skriver til - filer i Java.
+Klassen `GPSDataRFileReader.java` inneholder ferdig Java-kode for å lese inn en CVS-datafil med GPS punkter i formatet forklart tidligere. Denne Java-koden er der ikke behov for endre i og det er først litt senere i faget vi skal ta for oss hvordan hvordan en leser fra - og skriver til - filer i Java.
 
-Fokus i denne oppgavene er på å implementere metoden i klassen `GPSData.java` som skal lagre innlest GPS datapunkter i form av en referansetabell av `GPSPoint`-objekt og hjelpeklassen `GPSDataConverter.java` som inneholder hjelpemetoder for å konvertere det data som leses inn til `GPSPoint`-objekt.
+Fokus i denne oppgavene er på å implementere metoder i klassen `GPSData.java` som skal lagre innlest GPS datapunkter i form av en referansetabell av `GPSPoint`-objekt og hjelpeklassen `GPSDataConverter.java` som inneholder hjelpemetoder for å konvertere det data som leses inn til `GPSPoint`-objekt.
 
 #### a) GPS data konvertering
 
@@ -40,7 +40,7 @@ da skal metoden returner et `GPSPoint`-objekt der `time` er 31946, `latitude` er
 
 #### b) Referansetabell med GPS punkter
 
-GPS punktene som leses inn fra fil og konverteres skal representeres ved å bruke en referanasetabell dvs. en tabell der elementene som er lagret er pekere til `GPSPoint`-objekt.
+GPS punktene som leses inn fra fil og konverteres skal representeres ved å bruke en referansetabell dvs. en tabell der elementene som er lagret er pekere (referanser) til `GPSPoint`-objekt.
 
 Starten på implementasjonen finnes i klassen `GPSData.java`:
 
@@ -55,7 +55,7 @@ public class GPSData {
 
 Objektvariablen `gpspoints` skal brukes til å peke på referansetabellen av GPS punkter. Objektvariabelen `antall` skal brukes ifm. med innsettelse i tabellen til å holde kontroll på hvor (dvs. på hvilken posisjon/indeks) neste punkt skal settes inn.
 
-Variabelen `antall` vil til ethvert tidspunkt angi hvor mange GPS punkter som er satt inn i tabellen. Indeks der det ikke er satt inn noen vare vil ha verdien `null` (en null-peker). Objektvariablen `antall` har modifikatoren `protected` for å gjøre det enklere å teste klassen. Testene for klassen finnes i klassen `GPSDataTester.java`.
+Variablen `antall` vil til ethvert tidspunkt angi hvor mange GPS punkter som er satt inn i tabellen. Indeks der det ikke er satt inn noen vare vil ha verdien `null` (en null-peker). Objektvariablen `antall` har modifikatoren `protected` for å gjøre det enklere å teste klassen. Testene for klassen finnes i klassen `GPSDataTester.java`.
 
 Gjør ferdig implementasjonen av følgende metoder:
 
@@ -63,7 +63,7 @@ Gjør ferdig implementasjonen av følgende metoder:
 
 - `protected boolean insertGPS(GPSPoint gpspoint)` som setter inn GPS punktet `gpspoint` i `gpspoints`-tabellen på posisjonen angitt ved objektvariablen `antall`. Videre skal metoden inkrementere `antall` slik neste punkt kommmer inn på neste posisjon. Metoden skal kun sette inn `gpspoint` om der er plass i tabellen dvs. hvis `antall` er strengt mindre enn `gpspoints.length`. Metoden skal returnere `true` om punktet blev satt inn og `false` ellers.
 
-- `public boolean insert(String time, String latitude, String longitude, String elevation)` som tar GPS punkt data i streng-representasjon og setter inn et tilsvarende `GPSPoint`-objekt i `gpspoints`-tabellen. **Hint:** Metoden skal konvertere data, opprette et nytt `GPSPoint-objekt` og bruk `insertGPS`-metoden ovenfor.
+- `public boolean insert(String time, String latitude, String longitude, String elevation)` som tar GPS punkt data i streng-representasjon og setter inn et tilsvarende `GPSPoint`-objekt i `gpspoints`-tabellen. **Hint:** Metoden skal konvertere data, opprette et nytt `GPSPoint-objekt` og bruke `insertGPS`-metoden ovenfor.
 
 - `public void print()` som skal skrive ut GPS data som finnes i `gpspoints`-tabellen på følgende formen
 

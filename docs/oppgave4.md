@@ -1,8 +1,8 @@
 ### Oppgave 4: GPS-basert statistikk
 
-I klassen `GPSComputer.java` skal det implementere metoder som beregner statistikk (nøkkeltall) basert på de innleste og konverterte GPS data.
+I klassen `GPSComputer.java` skal det implementeres metoder som beregner statistikk (nøkkeltall) basert på de innleste og konverterte GPS data.
 
-I forbindelse med implementasjonen bør dere tenke på om der allerede finnes metoder fra tidligere oppgaver eller denne deloppgaven som kan brukes i løsningen.
+**Generelt hint:** I forbindelse med implementasjonen bør dere tenke på om der allerede finnes metoder fra tidligere oppgaver eller denne deloppgaven som kan brukes i løsningen. Dette gjelder spesielt metoder fra klassen `GPSUtils.java`?
 
 Klassen `GPSComputer.java` inneholder en tabell
 
@@ -10,7 +10,7 @@ Klassen `GPSComputer.java` inneholder en tabell
 	private GPSPoint[] gpspoints;
 ```
 
-med konvertert GPS data og metodene som implementeres skal bruke data fra denne tabellen til å gjøre beregninger. Tabellen vil inneholder de GPS punktene som utgjør ruten dvs. de punktene som en har syklet igjennom.
+med konvertert GPS data og metodene som implementeres skal bruke data fra denne tabellen til å gjøre beregninger. Tabellen vil inneholde de GPS punktene som utgjør ruten dvs. de punktene som en har syklet igjennom.
 
 Testklassen for denne oppgave er `GPSComputerTester.java`.
 
@@ -22,7 +22,7 @@ Implementer metoden
 public double totalDistance()
 ```
 
-som beregner den totale distansen på ruten som GPS dataene i `gpspoints`-tabellen angir. Dvs. metoden må legge sammen avstanden mellom de punktene som utgjør ruten.
+som beregner den totale distansen på ruten som GPS dataene i `gpspoints`-tabellen angir. Dvs. metoden må legge sammen avstanden (distanser) mellom de punktene som utgjør ruten.
 
 #### b)
 
@@ -32,7 +32,7 @@ Implementer metoden
 public double totalElevation()
 ```
 
-som beregner det totale antall høydemeter på ruten. Husk kun å telle høydemeter mellom to punkter om en beveger seg oppover.
+som beregner det totale antall høydemeter på ruten. **Husk** kun å telle høydemeter mellom to punkter om en beveger seg oppover.
 
 #### c)
 
@@ -53,8 +53,6 @@ public double[] speeds()
 ```
 
 som skal returnere en tabell med gjennomsnitshastigheter mellom hver av de punktene vi har beveget oss mellom. Dvs. første inngang i tabellen skal være hastigheten vi beveget oss med mellom punkt 0 og punkt 1, andre inngang hastigheten mellom punkt 1 og 2 osv. Hvis antall GPS datapunker er *N* da vil lengden av den tabellen som returneres være *N-1*.
-
-**Hint:** kan du bruke noe fra klassen `GPSUtils.java`?
 
 #### e)
 

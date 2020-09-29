@@ -4,7 +4,7 @@ I denne oppgaven skal EasyGraphics-biblioteket brukes til å visualisere høydep
 
 Dokumentasjon for metodene i EasyGraphics-bibliotekt kan finnes her https://dbsys.info/programmering/easygraphics/javadoc/index.html
 
-### Høydeprofil
+### a) Høydeprofil
 
 I denne oppgaven skal høyde-kurven for ruten gitt ved GPS datapunktene visualieres.
 
@@ -30,7 +30,7 @@ som tegner høydeprofilen der parameteren `ybase` angir hvor på y-aksen bunnen 
 
 For å gjøre oppgaven enklere kan det antas at hvert punkt (pixel) i vinduet svarer til en høyde-meter. Eventuelt negative høyder skal ignoreres – dvs. behandles som om de hadde verdien 0.
 
-### Hastighet
+### b) Hastighet
 
 I denne oppgaven skal hastigheten der blev kjørt med i løpet av ruten visualiseres. For GPS datafilen `medium.log` skal visualiseringen se slik ut
 
@@ -40,9 +40,9 @@ der denne grønne linjen indikerer gjennomsnittshastigheten for hele ruten.
 
 Ferdiggjør implementasjonen av metoden `showSpeedProfile` i klassen `ShowSpeed.java`
 
-Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller metoden `showSpeedProfile`. GPS data blir automatisk lest inn i `gpspoints`-tabell  med samme navn som for høydeprofil ovenfor og der opprettes også et `GPSComputer`-objekt som kan brukes til å beregne nøkkeltall med.
+Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller metoden `showSpeedProfile`. GPS data blir automatisk lest inn i `gpspoints`-tabell  med samme navn som for høydeprofil ovenfor.
 
-### Sykkelruten
+### c) Sykkelruten
 
 I denne oppgaven ruten visualieres på et kart og til slutt skrive ut statistikk (nøkkeltall) om sykkelturen i øverste venstre hjørne. Et eksempel er vist nedenfor for log filen `medium.log`
 
@@ -50,9 +50,9 @@ I denne oppgaven ruten visualieres på et kart og til slutt skrive ut statistikk
 
 der y-aksen svarer til breddegrader og x-aksen svarer til lengdegrader.
 
-Ferdiggjør implementasjonen av metodene i klassen `ShowRoute.java`. Der finnes allerede en `main`-metode i klassen som setter opp vindu og som kaller de tre metodene `ShowRouteMap`, `ShowStatistics` og `PlayRoute`.
+Ferdiggjør implementasjonen av metodene i klassen `ShowRoute.java`. Der finnes allerede en `main`-metode i klassen som setter opp vindu og som kaller de tre metodene `ShowRouteMap`, `ShowStatistics` og `PlayRoute`. Startkoden oppretter også et `GPSComputer`-objekt som kan brukes til å beregne nøkkeltall med.
 
-Metoden som skal implementeres er:
+Implementer metoden
 
 ```java
 public double ystep()
@@ -62,12 +62,15 @@ som beregner hvor mange punkter (pixels) en breddegrad skal svare til for at vi 
 
 **Hint:** se implementasjonen av metoden `xstep()`. Vi antar her at jorden er flat dvs. en lengde og en breddegrad svarer til samme avstand uansett hvor vi befinner oss. Al den stund vi ikke sykler over veldig lange avstander er det en rimelig antagelse.
 
+Implementer metoden
+
 ```java
 showRouteMap(int ybase)
 ```
 
 som tegner punkter i vinduet svarende til de (lengdegrad,breddegrad) posisjoner som finnes i GPS datafilen. Parameteren `ybase` angir det sted på y-aksen som skal svare til den minste breddegrad som finnes i datafilen.
 
+Implementer metoden
 ```java
 public void showStatistics()
 ```

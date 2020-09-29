@@ -35,6 +35,6 @@ Gjør ferdig implementasjonen av `toString()`-metoden som returnerer en strengre
 
 `1 (2.0,3.0) 5.0\n`
 
-der `1` er tiden, `(2.0,3.0)` er (breddegrad,lengdegrad) og 5.0 er høyden.
+der `1` er tiden, `(2.0,3.0)` er (breddegrad,lengdegrad) og `5.0` er høyden.
 
 Test implementasjonen ved å bruke enhetstestene.
