@@ -22,13 +22,15 @@ public static int toSeconds(String timestr)
 
 som omregner tidsdata som representert ovenfor til antall sekunder. For eksemplet ovenfor skal de 8 timer, 52 minutter og 26  regnes om til sekunder og returneres.
 
+**Hint:** Se på `substring`-metoden i `String`-klassen samt `parseInt`-metoden i `Integer`-klassen.  
+
 Implementer metoden
 
 ```java
 public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
 ```
 
-som tar Streng-representasjoner av tid, breddegrad, lengdegrad og høyd, konverterer disse og oppretter et `GPSPoint`-objekt med de tilsvarende data.
+som tar String-representasjoner av tid, breddegrad, lengdegrad og høyd, konverterer disse og oppretter et `GPSPoint`-objekt med de tilsvarende data. Metoden skal returnere en peker til det `GPSPoint`-objekt som blev opprettet.
 
 Hvis eksempelvis skal metoden kalles med
 
@@ -36,11 +38,13 @@ Hvis eksempelvis skal metoden kalles med
 convert("2017-08-13T08:52:26.000Z","60.385390","5.217217","61.9")
 ```
 
-da skal metoden returner et `GPSPoint`-objekt der `time` er 31946, `latitude` er 60.385390, `longitude` er 5.217217 og `elevation` er 61.9.
+da skal metoden returner et `GPSPoint`-objekt der `time` er `31946`, `latitude` er `60.385390`, `longitude` er `5.217217` og `elevation` er `61.9`.
 
 #### b) Referansetabell med GPS punkter
 
 GPS punktene som leses inn fra fil og konverteres skal representeres ved å bruke en referansetabell dvs. en tabell der elementene som er lagret er pekere (referanser) til `GPSPoint`-objekt.
+
+*For denne oppgaven er spesielt Kap 6.4 samt Undervisning 14 relevant.
 
 Starten på implementasjonen finnes i klassen `GPSData.java`:
 

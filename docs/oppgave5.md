@@ -30,6 +30,8 @@ som tegner høydeprofilen der parameteren `ybase` angir hvor på y-aksen bunnen 
 
 For å gjøre oppgaven enklere kan det antas at hvert punkt (pixel) i vinduet svarer til en høyde-meter. Eventuelt negative høyder skal ignoreres – dvs. behandles som om de hadde verdien 0.
 
+**Hint:** Bruk en løkke for å iterere igjennom alle punktene og oppdater start (x,ybase)-punkt og slutt (x,y2)-punkt for linjer som kan tegnes med `drawLine`-metoden i EasyGraphics. Den symbolske konstanten `MARGIN` i klassen angir hvor på x-aksen den først vertikale linjen skal tegnes.
+
 ### b) Hastighet
 
 I denne oppgaven skal hastigheten der blev kjørt med i løpet av ruten visualiseres. For GPS datafilen `medium.log` skal visualiseringen se slik ut
@@ -76,3 +78,5 @@ public void showStatistics()
 ```
 
 som viser statistikk fra sykkelturen i øverste venstre hjørne (se bildet først i oppgaven ovenfor).
+
+**Hint:** Easygraphics-metoden `drawString` kan brukes til å "tegne" en streng i vinduet. Metodene på objektet `gspcomputer` inne i klassen kan brukes til å finne de nøkkeltall som skal vises som del av statistikken.

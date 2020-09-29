@@ -4,6 +4,8 @@ I denne oppgaven skal det implementeres noen hjelpe-metoder i klassen `GPSUtils.
 
 Oppgaven består i å gjøre ferdig implementasjonen av metodene nedenfor i klassen `GPSUtils.java` og bruke enhetstestene i klassen `GPSUtilsTester.java` til løpende å teste koden.
 
+*For denne oppgaven er spesielt Kap 5.1-5.3, 5.5-5.6 i Java-boken samt Undervisning 8 og 9 relevante*
+
 #### a)
 
 Implementer metoden
@@ -63,7 +65,7 @@ public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 
 som beregninger gjennomsnittshastighet i **km/t** om man beveger seg fra punktet gitt ved `gpspoint1` til punktet `gpspoint2` på det antall sekunder som er gitt med parameteren `secs`.
 
-**Hint:** Bruk metoden `distance` fra d).
+**Hint:** Bruk metoden `distance` fra d) samt get-metode(r) på `GPSPoint`-objekt.
 
 #### f)
 

@@ -2,6 +2,8 @@
 
 I klassen `GPSComputer.java` skal det implementeres metoder som beregner statistikk (nøkkeltall) basert på de innleste og konverterte GPS data.
 
+*For denne oppgaven er spesielt oppgave 4b) (https://github.com/dat100hib/dat100public/blob/master/programmering/jplab7/JP7.md#b) fra programmeringslab 7 relevant*
+
 **Generelt hint:** I forbindelse med implementasjonen bør dere tenke på om der allerede finnes metoder fra tidligere oppgaver eller denne deloppgaven som kan brukes i løsningen. Dette gjelder spesielt metoder fra klassen `GPSUtils.java`?
 
 Klassen `GPSComputer.java` inneholder en tabell
@@ -10,7 +12,7 @@ Klassen `GPSComputer.java` inneholder en tabell
 	private GPSPoint[] gpspoints;
 ```
 
-med konvertert GPS data og metodene som implementeres skal bruke data fra denne tabellen til å gjøre beregninger. Tabellen vil inneholde de GPS punktene som utgjør ruten dvs. de punktene som en har syklet igjennom.
+med (allerede) konvertert GPS data og metodene som implementeres skal bruke data fra denne tabellen til å gjøre beregninger. Tabellen vil inneholde de GPS punktene som utgjør ruten dvs. de punktene som en har syklet igjennom.
 
 Testklassen for denne oppgave er `GPSComputerTester.java`.
 

@@ -4,6 +4,8 @@ I denne oppgaven skal der implementeres en klasse `GPSPoint.java` for å kunne r
 
 Ideen er at et GPS punkt skal representeres som et objekt av `GPSPoint`-klassen og programmet skal ha et slikt objekt for hvert GPS punkt. For hvert GPS punkt får vi behov for å lagre tidspunkt, breddegrad, lengdegrad og høyde.
 
+*For denne oppgaven er spesielt Kap. 6.1 - 6.3 i Java-boken samt Undervisning 13 relevant.*
+
 ### a) Objektvariable og konstruktør
 
 Se på start-koden for klassen `GPSPoint.java` i pakken `no.hvl.dat100ptc.oppgave1`. Utvid startkoden for klassen slik klassen får følgende objektvariable:
