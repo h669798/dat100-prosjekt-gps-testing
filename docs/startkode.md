@@ -6,7 +6,7 @@ Det ene Eclipse-prosjekt inneholder en rekke Java-klasser som utgjør rammen run
 
 Det andre Eclipse-prosjektet inneholder en rekke enhetstester som skal bruke til automatisk å teste den koden dere skriver.
 
-Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor og også vist i video som er lagt ut på Canvas: **TODO**
+Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor og også vist i video som er lagt ut på Canvas: https://hvl.instructure.com/courses/13433/pages/programmeringsprosjekt-importere-startkode
 
 ## Steg 1: Eclipse-prosjekt med startkode (Fork + Clone + Import)
 
