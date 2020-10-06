@@ -126,7 +126,7 @@ Total distance :      13.74 km
 Total elevation:     210.60 m
 Max speed      :      47.98 km/t
 Average speed  :      22.54 km/t
-Energy         :     742.80 kcal
+Energy         :     744.40 kcal
 ==============================================
 ```
 
