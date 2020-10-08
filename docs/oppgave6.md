@@ -7,13 +7,13 @@ Disse er frivillige og tenkt som ekstra utfordringer for de som har lyst på det
 Utvid klassen `GPSComputer.java` med en metode
 
 ```java
-public void climbs()
+public double[] climbs()
 ```
 
 som beregner stigningsprosent for de ulike deler av ruten og en metode
 
 ```java
-public void maxClimb()
+public double maxClimb()
 ```
 
 som finner den del av ruten som har den høyeste stigningsprosent.
