@@ -81,4 +81,4 @@ Gjør ferdig implementasjonen av følgende metoder:
 
 **Hint**: bruk løkke og `toString`-metoden på `GPSPoint`-objekt
 
-Metodene som allerede er implementert i klassen `GPSDataFileReader.java` leser - linje for linje - i GPS datafilen og lagrer data i tabellen ved å bruke `insert`-metoden. Dette betyr at punktene i `gpspoint`-tabellen svarer til ruten som er representert i GPS datafilen.
+Metodene som allerede er implementert i klassen `GPSDataFileReader.java` leser - linje for linje - i GPS datafilen og lagrer data i tabellen ved å bruke `insert`-metoden. Dette betyr at punktene i `gpspoint`-tabellen svarer til ruten som er representert i GPS datafilen og `gpspoint`-referansetabellen vil ha samme lengde som antallet av GPS punkter som er leste inn. Det siste betyr videre at hvert element i `gpspoint`-tabellen vil peke på et objekt. dvs. tabellen er full. 
