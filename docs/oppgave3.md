@@ -1,8 +1,8 @@
 ### Oppgave 3 - GPS hjelpemetoder
 
-I denne oppgaven skal det implementeres noen hjelpe-metoder i klassen `GPSUtils.java` som vi skal bruke seinere i prosjektet til å gjøre beregninger på de GPS datapunkter som blir lest inn og lagret via metodene og klassene implementert i oppgave 2.
+I denne oppgaven skal det implementeres noen hjelpe-metoder i klassen `GPSUtils.java` som vi skal bruke seinere i prosjektet til å gjøre beregninger på de GPS datapunktene som blir lest inn og lagret via metodene og klassene implementert i oppgave 2.
 
-Oppgaven består i å gjøre ferdig implementasjonen av metodene nedenfor i klassen `GPSUtils.java` og bruke enhetstestene i klassen `GPSUtilsTester.java` til løpende å teste koden.
+Denne oppgaven består i å gjøre ferdig implementasjonen av metodene nedenfor i klassen `GPSUtils.java` og bruke enhetstestene i klassen `GPSUtilsTester.java` til løpende å teste koden.
 
 *For denne oppgaven er spesielt Kap 5.1-5.3, 5.5-5.6 i Java-boken samt Undervisning 8 og 9 relevante*
 
@@ -26,7 +26,7 @@ public static double[] getLatitudes(GPSPoint[] gpspoints)
 
 som tar en tabell med GPS punkter som parameter og returnerer en tabell av desimaltall inneholdende breddegradene for GPS-punktene.
 
-**Hint:** metoden skal først opprette en tabell av desimaltall med samme lengde som `gpspoint` og så kopiere de enkelte breddegrader over i den nye tabellen. Husk at `getLatitudes`-metoden på et `GPSPoint`-objekt kan brukes til å lese ut breddegrad i et objekt.   
+**Hint:** metoden skal først opprette en tabell av desimaltall med samme lengde som `gpspoints`-tabellen og så kopiere de enkelte breddegrader over i den nye tabellen. Husk at `getLatitude`-metoden på et `GPSPoint`-objekt kan brukes til å lese ut breddegrad i et objekt.   
 
 #### c)
 
@@ -36,7 +36,7 @@ Implementer metoden
 public static double[] getLongitudes(GPSPoint[] gpspoints)
 ```
 
-som er tilsvarende `getLatitudes`-metoden ovenfor men for lengdegrader.
+som er tilsvarende `getLatitudes`-metoden ovenfor, men for lengdegrader.
 
 #### d)
 
@@ -63,7 +63,7 @@ Implementer metoden
 public static double speed(GPSPoint gpspoint1, GPSPoint gpspoint2) {
 ```
 
-som beregninger gjennomsnittshastighet i **km/t** om man beveger seg fra punktet gitt ved `gpspoint1` til punktet `gpspoint2` på det antall sekunder som er gitt med parameteren `secs`.
+som beregninger gjennomsnittshastighet i **km/t** om man beveger seg fra punktet gitt ved `gpspoint1` til punktet `gpspoint2`.
 
 **Hint:** Bruk metoden `distance` fra d) samt get-metode(r) på `GPSPoint`-objekt.
 

@@ -8,7 +8,9 @@ Ideen er at et GPS punkt skal representeres som et objekt av `GPSPoint`-klassen 
 
 ### a) Objektvariable og konstruktør
 
-Se på start-koden for klassen `GPSPoint.java` i pakken `no.hvl.dat100ptc.oppgave1`. Utvid startkoden for klassen slik klassen får følgende objektvariable:
+Se på start-koden for klassen `GPSPoint.java` i pakken `no.hvl.dat100ptc.oppgave1`.
+
+Utvid startkoden for klassen slik klassen får følgende objektvariable:
 
 -	`time` (heltall) som angir tiden i sekunder
 -	`latitude` (desimaltall) som angir breddegrad
@@ -25,11 +27,11 @@ public GPSPoint(int time, double latitude, double longitude, double elevation)
 
 som kan gi verdi til alle objektvariable.
 
-Test implementasjonen ved å kjøre testene i test-klassen `GPSPointeTester.java`
+Test implementasjonen ved å kjøre testene i test-klassen `GPSPointTester.java`.
 
 ### b) Hent/sett-metoder
 
-Gjør ferdig implementasjonen av hent/sett (get/set)-metoder og test de med enhetstestene.
+Gjør ferdig implementasjonen av hent/sett (get/set)-metoder og test de med enhetstestene i test-klassen `GPSPointTester.java`.
 
 ### c) Representasjon som tekststreng
 
@@ -39,4 +41,4 @@ Gjør ferdig implementasjonen av `toString()`-metoden som returnerer en strengre
 
 der `1` er tiden, `(2.0,3.0)` er (breddegrad,lengdegrad) og `5.0` er høyden.
 
-Test implementasjonen ved å bruke enhetstestene.
+Test implementasjonen ved å bruke enhetstestene i test-klassen `GPSPointTester.java`.

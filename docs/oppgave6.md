@@ -42,11 +42,7 @@ Utvid programmet slik det kan håndtere to (eller flere) samtidige sykkelryttere
 
 Denne oppgaven er vanskelig :-)
 
-Last ned eksempelvis GPSLogger app’en til Android:
-
-https://play.google.com/store/apps/details?id=com.mendhak.gpslogger&hl=en
-
-eller tilsvarende applikasjon for iOS som kan logge og dele GPS data i CSV format.
+Last ned en GPS Logger app’en på mobilen din som kan logge og dele GPS data i CSV format.
 
 Sett deg på sykkelen og kjør samme ruten som i GPS datafilen vm.log fra prosjektet - se ruten på http://doarama.com/view/1604599
 

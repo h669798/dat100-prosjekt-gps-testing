@@ -6,7 +6,7 @@ Det ene Eclipse-prosjekt inneholder en rekke Java-klasser som utgjør rammen run
 
 Det andre Eclipse-prosjektet inneholder en rekke enhetstester som skal bruke til automatisk å teste den koden dere skriver.
 
-Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor og også vist i video som er lagt ut på Canvas: https://hvl.instructure.com/courses/13433/pages/programmeringsprosjekt-importere-startkode
+Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor og også vist i en video som er lagt ut på Canvas for programmeringsprosjektet.
 
 ## Steg 1: Eclipse-prosjekt med startkode (Fork + Clone + Import)
 
@@ -14,19 +14,19 @@ Fremgangsmåten for å importere Java-koden inn i Eclipse er beskrevet nedenfor 
 
 Gå inn på github på oppbevaringsplassen som inneholder start-koden:
 
-https://github.com/dat100hib/dat100-prosjekt-startkode-2020
+https://github.com/dat100hib/dat100-prosjekt-gps-startkode
 
 Begynn med å opprette en kopi av denne oppbevaringsplassen ved å bruke "fork" (se øverste høyre hjørne på github-websiden). Du vil da få en kopi av oppbevaringsplassen med startkoden på din egen github konto.
 
-### Klone og importere startkode i Eclipse
+### Klone og importere startkode i Eclipse (Clone + Import)
 
-Du må nå laste ned (klone) oppbevaringsplassen med kode som du opprettet ovenfor. Det er **viktig** at du **ikke** kloner https://github.com/dat100hib/dat100-prosjekt-startkode-2020 men den oppbevaringsplassen som du opprettet på din egen konto da du utførte fork.
+Du må nå laste ned (klone) oppbevaringsplassen med kode som du opprettet ovenfor. Det er **viktig** at du **ikke** kloner https://github.com/dat100hib/dat100-prosjekt-gps-startkode men den oppbevaringsplassen som du opprettet på din egen konto da du utførte fork.
 
 1.	Velg *Code* på github-siden
 
 2.	Velg lenken og last ned en kopi (clone) oppbevaringsplassen på samme måten som du har gjort i Eclipse i tidligere oppgaver for å importere.
 
-Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-startcode`
+Du skal nå ha et prosjekt i Eclipse med navnet `dat100-prosjekt-gps-startcode`
 
 Eclipse-prosjektet er organisert i et antall pakker med en pakke til hver av oppgavene i prosjektet. Pakkene inneholder de klasser og metoder som gruppen skal implementere i oppgavene som presenteres nedenfor.
 
@@ -38,11 +38,11 @@ For å kjøre det enklere ifm. presentasjon av oppgaven å finne de plassene hvo
 
 Formålet med enhetstestene er å gjøre det enklere å teste metoder etterhvert som de implementeres uten å skulle starte selve sykkelcomputer-applikasjonen. Et Eclipse-prosjekt med ferdige enhetstester finnes på følgende github oppbevaringsplass:
 
-https://github.com/dat100hib/dat100-prosjekt-testing-2020
+https://github.com/dat100hib/dat100-prosjekt-gps-testing
 
 Du kloner oppbevaringsplassen og importerer inn i Eclipse på samme måten som tidligere men nå med oppbevaringsplassen gitt i lenken ovenfor. Du trenger **ikke** å gjøre fork på denne oppbevaringsplassen først siden du ikke trenger din egen kopi av oppbevaringsplassen på github.
 
-Du skal nå ha et prosjekt i Eclipse med navnet `dat100ptc-testing` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstester.
+Du skal nå ha et prosjekt i Eclipse med navnet `dat100-prosjekt-gps-testing` som inneholder en rekke enhetstester (unit-tests) implementert ved bruk av rammeverket JUnit. Det er ikke et krav i prosjektet å legge til flere enhetstester.
 
 Konvensjonen er at enhetstester for en klasse `X.java` er implementert i filen med navn `XTester`.java. Eksempelvis inneholder klassen `GPSUtilsTester.java` enhetstester for klassen `GPSUtils.java` hvor dere skal implementere metoder.
 
