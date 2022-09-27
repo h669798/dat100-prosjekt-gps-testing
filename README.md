@@ -37,13 +37,13 @@ Det er viktig at der er en logisk flytt gjennom presentasjonen så den er enkel 
 
 Start med å lese om GPS sensor data og overordnet formål med programmeringsoppgavene her:
 
-https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/introduksjon.md
+https://github.com/dat100hib/dat100-prosjekt-gps-testing/blob/master/docs/introduksjon.md
 
 ## Startkode og enhetstester
 
 Første steg for å komme igang med programmeringen er å laste ned et Eclipse-prosjekt med startkode og et Eclipse-prosjekt med enhetstester importere disse.
 
-Dette kan gjøres som beskrevet her: https://github.com/dat100hib/dat100-prosjekt-testing-2019/blob/master/docs/startkode.md
+Dette kan gjøres som beskrevet her: https://github.com/dat100hib/dat100-prosjekt-gps-testing/blob/master/docs/startkode.md
 
 ## Programmeringsoppgaver
 
