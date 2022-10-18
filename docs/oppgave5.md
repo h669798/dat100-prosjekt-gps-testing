@@ -1,277 +1,75 @@
 # Oppgave 5 - Visualisering
 
+I denne oppgaven skal EasyGraphics-biblioteket brukes til å visualisere høydeprofil, hastighet og rute.
 
-### a) Høydeprofil
-package no.hvl.dat100ptc.oppgave5;
+Dokumentasjon for metodene i EasyGraphics-bibliotekt kan finnes her https://dbsys.info/programmering/easygraphics/javadoc/index.html
 
-import easygraphics.EasyGraphics;
-import no.hvl.dat100ptc.TODO;
-import no.hvl.dat100ptc.oppgave1.GPSPoint;
-import no.hvl.dat100ptc.oppgave2.GPSData;
-import no.hvl.dat100ptc.oppgave2.GPSDataConverter;
-import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
-import no.hvl.dat100ptc.oppgave4.GPSComputer;
+### Høydeprofil
 
-import javax.swing.JOptionPane;
+I denne oppgaven skal høyde-kurven for ruten gitt ved GPS datapunktene visualieres.
 
-public class ShowProfile extends EasyGraphics {
+For GPS datafilen `medium.log` skal visualiseringen se ut som nedenfor der høyden på en vertikal linje svarer til høyden i GPS datapunktet.
 
-	private static final int MARGIN = 50;  // margin on the sides 
-	
-	private static int MAXBARHEIGHT = 500; // assume no height above 500 meters
-	
-	private GPSPoint[] gpspoints;
+![](assets/markdown-img-paste-20180909115303289.png)
 
-	public ShowProfile() {
+I klassen `showProfile.java` finnes allerede en `main`-metode som setter opp et vindu som kan brukes til å tegne høydeprofilen og som ber om navn på den datafil som skal visualiseres (short, medium, long,vm).
 
-		String filename = JOptionPane.showInputDialog("GPS data filnavn: ");
-		GPSComputer gpscomputer =  new GPSComputer(filename);
+Klassen sørger allerede for å lese inn data fra GPS datafilen ved oppstart og lagre GPS data i en tabell `gpspoints` med GPS punkter
 
-		gpspoints = gpscomputer.getGPSPoints();
-		
-	}
+```java
+private GPSPoint[] gpspoints;
+```
 
-	public static void main(String[] args) {
-		launch(args);
-	}
+Implementer metoden
 
-	public void run() {
+```java
+showHeightProfile(int ybase)
+```
 
-		int N = gpspoints.length; // number of data points
+som tegner høydeprofilen der parameteren `ybase` angir hvor på y-aksen bunnen av en søylene skal starte.
 
-		makeWindow("Height profile", 2 * MARGIN + 3 * N, 2 * MARGIN + MAXBARHEIGHT);
+For å gjøre oppgaven enklere kan det antas at hvert punkt (pixel) i vinduet svarer til en høyde-meter. Eventuelt negative høyder skal ignoreres – dvs. behandles som om de hadde verdien 0.
 
-		// top margin + height of drawing area
-		showHeightProfile(MARGIN + MAXBARHEIGHT); 
-	}
+### Hastighet
 
-	public void showHeightProfile(int ybase) {
+I denne oppgaven skal hastigheten der blev kjørt med i løpet av ruten visualiseres. For GPS datafilen `medium.log` skal visualiseringen se slik ut
 
-		// ybase indicates the position on the y-axis where the columns should start
-	
-		int x = MARGIN,y;
+![](assets/markdown-img-paste-20180909120055723.png)
 
-		// TODO - START
-		for(int i = 0; i < gpspoints.length; i++) {
-			
-			double height1 = gpspoints[i].getElevation();
-			double høyde1 = Math.round(height1);
-			
-			setColor(0,0,255);
-			drawLine(x, ybase, x, (int)(ybase-høyde1));
-			
-			x=x+2;
-		}
-		//throw new UnsupportedOperationException(TODO.method());
-	
-		// TODO - SLUTT
-	}
+der denne grønne linjen indikerer gjennomsnittshastigheten for hele ruten.
 
-}
+Ferdiggjør implementasjonen av metoden `showSpeedProfile` i klassen `ShowSpeed.java`
 
-### b) Hastighet
+Der finnes allerede en main-metode i klassen som setter opp vindu og som kaller metoden `showSpeedProfile`. GPS data blir automatisk lest inn i `gpspoints`-tabell  med samme navn som for høydeprofil ovenfor og der opprettes også et `GPSComputer`-objekt som kan brukes til å beregne nøkkeltall med.
 
-package no.hvl.dat100ptc.oppgave5;
+### Sykkelruten
 
-import javax.swing.JOptionPane;
+I denne oppgaven ruten visualieres på et kart og til slutt skrive ut statistikk (nøkkeltall) om sykkelturen i øverste venstre hjørne. Et eksempel er vist nedenfor for log filen `medium.log`
 
-import easygraphics.EasyGraphics;
-import no.hvl.dat100ptc.TODO;
-import no.hvl.dat100ptc.oppgave1.GPSPoint;
-import no.hvl.dat100ptc.oppgave3.GPSUtils;
-import no.hvl.dat100ptc.oppgave4.GPSComputer;
+![](assets/markdown-img-paste-20180909120229747.png)
 
-public class ShowRoute extends EasyGraphics {
+der y-aksen svarer til breddegrader og x-aksen svarer til lengdegrader.
 
-	private static int MARGIN = 50;
-	private static int MAPXSIZE = 800;
-	private static int MAPYSIZE = 800;
+Ferdiggjør implementasjonen av metodene i klassen `ShowRoute.java`. Der finnes allerede en `main`-metode i klassen som setter opp vindu og som kaller de tre metodene `ShowRouteMap`, `ShowStatistics` og `PlayRoute`.
 
-	private GPSPoint[] gpspoints;
-	private GPSComputer gpscomputer;
-	
-	public ShowRoute() {
+Metoden som skal implementeres er:
 
-		String filename = JOptionPane.showInputDialog("GPS data filnavn: ");
-		gpscomputer = new GPSComputer(filename);
+```java
+public double ystep()
+```
 
-		gpspoints = gpscomputer.getGPSPoints();
+som beregner hvor mange punkter (pixels) en breddegrad skal svare til for at vi kan tegne alle GPS datapunkter innen for et tegneområde på skjermen med et antall punkter i y-retningen som er gitt ved konstanten `MAPYSIZE`.
 
-	}
+**Hint:** se implementasjonen av metoden `xstep()`. Vi antar her at jorden er flat dvs. en lengde og en breddegrad svarer til samme avstand uansett hvor vi befinner oss. Al den stund vi ikke sykler over veldig lange avstander er det en rimelig antagelse.
 
-	public static void main(String[] args) {
-		launch(args);
-	}
+```java
+showRouteMap(int ybase)
+```
 
-	public void run() {
+som tegner punkter i vinduet svarende til de (lengdegrad,breddegrad) posisjoner som finnes i GPS datafilen. Parameteren `ybase` angir det sted på y-aksen som skal svare til den minste breddegrad som finnes i datafilen.
 
-		makeWindow("Route", MAPXSIZE + 2 * MARGIN, MAPYSIZE + 2 * MARGIN);
+```java
+public void showStatistics()
+```
 
-		showRouteMap(MARGIN + MAPYSIZE);
-		
-		showStatistics();
-	}
-
-	// antall x-pixels per lengdegrad
-	public double xstep() {
-
-		double maxlon = GPSUtils.findMax(GPSUtils.getLongitudes(gpspoints));
-		double minlon = GPSUtils.findMin(GPSUtils.getLongitudes(gpspoints));
-
-		double xstep = MAPXSIZE / (Math.abs(maxlon - minlon)); 
-
-		return xstep;
-	}
-
-	// antall y-pixels per breddegrad
-	public double ystep() {
-		
-	
-		double maxlat = GPSUtils.findMax(GPSUtils.getLatitudes(gpspoints));
-		double minlat = GPSUtils.findMin(GPSUtils.getLatitudes(gpspoints));
-		double ystep = MAPYSIZE / (Math.abs(maxlat - minlat));
-		
-		// TODO - START
-		
-		//throw new UnsupportedOperationException(TODO.method());
-return ystep;
-		// TODO - SLUTT
-		
-	}
-
-	public void showRouteMap(int ybase) {
-
-		// TODO - START
-		double startx = 0;
-		double starty = 0;
-		double ystep = ystep();
-		double xstep = xstep();
-		
-		double minlat = GPSUtils.findMin(GPSUtils.getLatitudes(gpspoints));
-		double minlon = GPSUtils.findMin(GPSUtils.getLongitudes(gpspoints));
-		
-		starty=ybase-(Math.abs(gpspoints[0].getLatitude()-minlat)*ystep); 
-		//Forskjellen nå gange pixler per latitude
-		
-		startx=50-(Math.abs(gpspoints[0].getLongitude()-minlon)*xstep); 
-		//Forskjellen nå gange pixler per logitude
-		
-		for(int i=1; i < gpspoints.length-1; i++) {
-			double lat = gpspoints[i].getLatitude();
-			double lon = gpspoints[i].getLongitude();
-			double endy = ybase-(Math.abs(lat-minlat)*ystep); 
-			double endx = 50+(Math.abs(lon-minlon)*xstep);
-			
-			setColor(0,255,0);
-			drawLine((int)startx,(int)starty,(int)endx,(int)endy);
-			fillCircle((int)startx,(int)starty,(int)3);
-			starty=endy;
-			startx=endx;
-			
-		}
-		
-		//throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - SLUTT
-	}
-
-	public void showStatistics() {
-
-		int TEXTDISTANCE = 20;
-
-		setColor(0,0,0);
-		setFont("Courier",12);
-		
-		String time = ("Total time         : " + GPSUtils.formatTime(gpscomputer.totalTime()));
-		drawString(time,TEXTDISTANCE,TEXTDISTANCE);
-		String distance = ("Total distance : " + GPSUtils.formatDouble(gpscomputer.totalDistance()/1000)+"km");
-		drawString(distance,TEXTDISTANCE,TEXTDISTANCE*2);
-		String elevation = ("Total elevation: " + GPSUtils.formatDouble(gpscomputer.totalElevation())+"m");
-		drawString(elevation,TEXTDISTANCE,TEXTDISTANCE*3);
-		String maxspeed = ("Max Speed      : " + GPSUtils.formatDouble(gpscomputer.maxSpeed())+"km/t");
-		drawString(maxspeed,TEXTDISTANCE,TEXTDISTANCE*4);
-		String avgspeed = ("Avg Speed      : " + GPSUtils.formatDouble(gpscomputer.averageSpeed())+"km/t");
-		drawString(avgspeed,TEXTDISTANCE,TEXTDISTANCE*5);
-		String kcal = ("Energy             : " + GPSUtils.formatDouble(gpscomputer.totalKcal(80))+"kcal");
-		drawString(kcal,TEXTDISTANCE,TEXTDISTANCE*6);
-		// TODO - START
-		
-		//throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - SLUTT;
-	}
-
-}
-
-### c) Sykkelruten
-
-package no.hvl.dat100ptc.oppgave5;
-
-import javax.swing.JOptionPane;
-
-import easygraphics.EasyGraphics;
-import no.hvl.dat100ptc.TODO;
-import no.hvl.dat100ptc.oppgave1.GPSPoint;
-import no.hvl.dat100ptc.oppgave2.GPSData;
-import no.hvl.dat100ptc.oppgave2.GPSDataFileReader;
-import no.hvl.dat100ptc.oppgave3.GPSUtils;
-import no.hvl.dat100ptc.oppgave4.GPSComputer;
-
-public class ShowSpeed extends EasyGraphics{
-			
-	private static final int MARGIN = 50;
-	private static final int BARHEIGHT = 200; // assume no speed above 200 km/t
-
-	private GPSComputer gpscomputer;
-	private GPSPoint[] gpspoints;
-	
-	public ShowSpeed() {
-
-		String filename = JOptionPane.showInputDialog("GPS data filnavn: ");
-		gpscomputer = new GPSComputer(filename);
-
-		gpspoints = gpscomputer.getGPSPoints();
-		
-	}
-	
-	// read in the files and draw into using EasyGraphics
-	public static void main(String[] args) {
-		launch(args);
-	}
-
-	public void run() {
-
-		int N = gpspoints.length-1; // number of data points
-		
-		makeWindow("Speed profile", 2*MARGIN + 2 * N, 2 * MARGIN + BARHEIGHT);
-		
-		showSpeedProfile(MARGIN + BARHEIGHT,N);
-	}
-	
-	public void showSpeedProfile(int ybase, int N) {
-
-		// get segments speeds from the GPS computer object		
-		double[] speeds = gpscomputer.speeds();
-		double avgspeed = 0;
-		int x = MARGIN,y;
-		
-		for(int i = 0; i < gpspoints.length - 1; i++) {
-			
-			setColor(0,0,255);
-			drawLine(x, ybase, x, ybase-(int)speeds[i]);
-			
-			x=x+2;
-			avgspeed = avgspeed+speeds[i];
-		}
-		 avgspeed = avgspeed/N;
-		 setColor(0,255,0);
-		 drawLine (MARGIN,ybase-(int)avgspeed,x,ybase-(int)avgspeed);
-
-		// TODO - START
-		
-		//throw new UnsupportedOperationException(TODO.method());
-	
-		// TODO - SLUTT
-	}
-}
-
+som viser statistikk fra sykkelturen i øverste venstre hjørne (se bildet først i oppgaven ovenfor).
